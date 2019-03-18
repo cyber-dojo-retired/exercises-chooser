@@ -1,8 +1,0 @@
-services: docker
-language: node_js
-git:
-  depth: 1
-  quiet: true
-
-script:
-    - ./.circleci/old_architecture.sh

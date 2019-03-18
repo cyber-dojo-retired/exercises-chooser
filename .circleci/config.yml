@@ -15,7 +15,7 @@ jobs:
             set -e
             ./pipe_build_up_test.sh
             echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
-            readonly image=cyberdojo/start-points
+            readonly image=cyberdojo/exercises
             docker tag  ${image}:latest ${image}:${CIRCLE_SHA1:0:7}
             docker tag  ${image}:latest ${image}:beta
             docker push ${image}:${CIRCLE_SHA1:0:7}
