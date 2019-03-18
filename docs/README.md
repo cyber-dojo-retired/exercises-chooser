@@ -13,7 +13,7 @@ $ ./cyber-dojo start-points create \
       --exercises \
         https://github.com/cyber-dojo/exercises
 
-$ ./cyber-dojp up \
+$ ./cyber-dojo up \
     --exercises=${IMAGE_NAME}
 ```
 
