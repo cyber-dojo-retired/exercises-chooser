@@ -10,14 +10,18 @@ jobs:
     steps:
       - checkout
       - run:
-          name: build image from start-points repos and push to dockerhub
+          name: build image
           command: |
-            set -e
+            set -ev
             ./pipe_build_up_test.sh
-            echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
+      - run:
+          name: push image to dockerhub
+          command: |
+            set -ev
             readonly image=cyberdojo/exercises
             docker tag  ${image}:latest ${image}:${CIRCLE_SHA1:0:7}
             docker tag  ${image}:latest ${image}:beta
+            echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
             docker push ${image}:${CIRCLE_SHA1:0:7}
             docker push ${image}:beta
 
