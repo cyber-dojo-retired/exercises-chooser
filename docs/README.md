@@ -7,10 +7,14 @@ Not live yet. Working towards making it live on https://beta.cyber-dojo.org
 Specifies the start-points used to create the cyberdojo/exercises Docker image.
 
 ```bash
+$ IMAGE_NAME=cyberdojo/exercises
 $ ./cyber-dojo start-points create \
-    cyberdojo/exercises \
+    ${IMAGE_NAME} \
       --exercises \
         https://github.com/cyber-dojo/exercises
+
+$ ./cyber-dojp up \
+    --exercises=${IMAGE_NAME}
 ```
 
 - - - -
