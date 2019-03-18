@@ -15,7 +15,7 @@ jobs:
             set -ev
             ./pipe_build_up_test.sh
       - run:
-          name: push image to dockerhub
+          name: publish image on dockerhub
           command: |
             set -ev
             readonly image=cyberdojo/exercises
