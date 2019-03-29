@@ -2,17 +2,20 @@
 set -ev
 
 readonly GITHUB_ORG=https://raw.githubusercontent.com/cyber-dojo
-readonly CREATE_IMAGE_SCRIPT=cyber_dojo_start_points_create.sh
+readonly SCRIPT_NAME=cyber_dojo_start_points_create.sh
+#readonly SCRIPT_NAME=cyber-dojo
 readonly TMP_DIR=$(mktemp -d /tmp/cyber-dojo-exercises.XXXXXXXXX)
 
 remove_tmp_dir() { rm -rf ${TMP_DIR} > /dev/null; }
 trap remove_tmp_dir EXIT
 
 cd ${TMP_DIR}
-curl -O --silent "${GITHUB_ORG}/starter-base/master/${CREATE_IMAGE_SCRIPT}"
-chmod 700 ./${CREATE_IMAGE_SCRIPT}
+curl -O --silent "${GITHUB_ORG}/starter-base/master/${SCRIPT_NAME}"
+#curl -O --silent "${GITHUB_ORG}/commander/master/${SCRIPT_NAME}"
+chmod 700 ./${SCRIPT_NAME}
 
-./${CREATE_IMAGE_SCRIPT} \
+#./${SCRIPT_NAME} start-point create \
+./${SCRIPT_NAME} \
     cyberdojo/exercises \
       --exercises \
         https://github.com/cyber-dojo/exercises.git

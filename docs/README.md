@@ -10,7 +10,7 @@ Specifies the start-points used to create the cyberdojo/exercises Docker image.
 ```bash
 $ IMAGE_NAME=cyberdojo/exercises
 
-$ ./cyber-dojo start-points create \
+$ ./cyber-dojo start-point create \
     ${IMAGE_NAME} \
       --exercises \
         https://github.com/cyber-dojo/exercises
