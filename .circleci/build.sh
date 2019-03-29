@@ -14,7 +14,6 @@ curl -O --silent "${GITHUB_ORG}/starter-base/master/${SCRIPT_NAME}"
 #curl -O --silent "${GITHUB_ORG}/commander/master/${SCRIPT_NAME}"
 chmod 700 ./${SCRIPT_NAME}
 
-#./${SCRIPT_NAME} start-point create \
 ./${SCRIPT_NAME} start-point create \
     cyberdojo/exercises \
       --exercises \
