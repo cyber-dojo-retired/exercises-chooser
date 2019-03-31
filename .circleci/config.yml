@@ -13,7 +13,7 @@ jobs:
           name: build image
           command: |
             set -ev
-            ./pipe_build_up_test.sh
+            ./sh/build.sh
       - run:
           name: publish image on dockerhub
           command: |
