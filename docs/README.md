@@ -16,7 +16,7 @@ $ ./cyber-dojo start-point create \
         https://github.com/cyber-dojo/exercises
 
 $ ./cyber-dojo up \
-    --exercises=${IMAGE_NAME}
+    --exercises=${IMAGE_NAME}:latest
 ```
 
 - - - -
