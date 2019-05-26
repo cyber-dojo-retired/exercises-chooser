@@ -24,6 +24,7 @@ jobs:
             echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
             docker push ${image}:${CIRCLE_SHA1:0:7}
             docker push ${image}:beta
+            docker push ${image}:latest            
 
   deploy-image-to-beta:
     docker:
