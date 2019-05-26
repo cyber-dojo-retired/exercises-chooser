@@ -16,9 +16,6 @@ $ ./cyber-dojo start-point create \
     cyberdojo/exercises \
       --exercises \
         https://github.com/cyber-dojo/exercises.git
-
-$ ./cyber-dojo up \
-    --exercises=cyberdojo/exercises
 ```
 
 - - - -
