@@ -5,7 +5,7 @@ readonly ROOT_DIR="$( cd "$( dirname "${0}" )" && cd .. && pwd )"
 readonly SHA_VALUE=$(cd "${ROOT_DIR}" && git rev-parse HEAD)
 
 readonly GITHUB_ORG=https://raw.githubusercontent.com/cyber-dojo
-readonly REPO_NAME=starter-base
+readonly REPO_NAME=commander
 
 readonly SCRIPT_NAME=cyber-dojo
 readonly TMP_DIR=$(mktemp -d /tmp/cyber-dojo-exercises.XXXXXXXXX)
