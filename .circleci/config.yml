@@ -13,7 +13,7 @@ jobs:
           name: build image
           command: |
             set -ev
-            ./sh/build.sh
+            ./pipe_build_up_test.sh
       - run:
           name: publish image on dockerhub
           command: |
@@ -24,7 +24,7 @@ jobs:
             echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
             docker push ${image}:${CIRCLE_SHA1:0:7}
             docker push ${image}:beta
-            docker push ${image}:latest            
+            docker push ${image}:latest
 
   deploy-image-to-beta:
     docker:
