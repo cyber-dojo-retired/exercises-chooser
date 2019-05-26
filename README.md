@@ -12,8 +12,10 @@ $
 $ curl --silent "${GITHUB_ORG}/commander/master/cyber-dojo" -o cyber-dojo
 $ chmod 700 cyber-dojo
 $
+$ IMAGE_NAME=cyberdojo/exercises
+$
 $ ./cyber-dojo start-point create \
-    cyberdojo/exercises \
+     "${IMAGE_NAME}" \
       --exercises \
         https://github.com/cyber-dojo/exercises.git
 ```
