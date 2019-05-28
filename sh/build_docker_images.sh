@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ev
+set -e
 
 readonly ROOT_DIR="$( cd "$( dirname "${0}" )" && cd .. && pwd )"
 readonly SHA_VALUE=$(cd "${ROOT_DIR}" && git rev-parse HEAD)
