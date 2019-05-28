@@ -4,7 +4,7 @@
 [![CircleCI](https://circleci.com/gh/cyber-dojo/exercises.svg?style=svg)](https://circleci.com/gh/cyber-dojo/exercises)
 
 Specifies the start-points used to create the
-cyberdojo/exercises start-point image.
+[cyberdojo/exercises](https://hub.docker.com/r/cyberdojo/exercises) start-point image.
 
 ```bash
 $ set -e
