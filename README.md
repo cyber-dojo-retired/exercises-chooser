@@ -7,18 +7,19 @@ Specifies the start-points used to create the
 [cyberdojo/exercises](https://hub.docker.com/r/cyberdojo/exercises) start-point image.
 
 ```bash
-$ set -e
-$ GITHUB_ORG=https://raw.githubusercontent.com/cyber-dojo
-$ curl --silent --fail "${GITHUB_ORG}/commander/master/cyber-dojo" -o cyber-dojo
-$ chmod 700 cyber-dojo
-$
-$ IMAGE_NAME=cyberdojo/exercises
-$ GIT_REPO_URL=https://github.com/cyber-dojo/exercises.git
-$
-$ ./cyber-dojo start-point create \
-     "${IMAGE_NAME}" \
-      --exercises \
-        "${GIT_REPO_URL}"        
+#!/bin/bash
+set -e
+GITHUB_ORG=https://raw.githubusercontent.com/cyber-dojo
+curl --silent --fail "${GITHUB_ORG}/commander/master/cyber-dojo" -o cyber-dojo
+chmod 700 cyber-dojo
+
+IMAGE_NAME=cyberdojo/exercises
+GIT_REPO_URL=https://github.com/cyber-dojo/exercises.git
+
+./cyber-dojo start-point create \
+   "${IMAGE_NAME}" \
+    --exercises \
+      "${GIT_REPO_URL}"        
 ```
 
 - - - -
