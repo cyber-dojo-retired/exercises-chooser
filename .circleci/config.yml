@@ -12,12 +12,12 @@ jobs:
       - run:
           name: build image
           command: |
-            set -ev
+            set -e
             ./pipe_build_up_test.sh
       - run:
           name: publish image on dockerhub
           command: |
-            set -ev
+            set -e
             readonly image=cyberdojo/exercises
             docker tag  ${image}:latest ${image}:${CIRCLE_SHA1:0:7}
             docker tag  ${image}:latest ${image}:beta
