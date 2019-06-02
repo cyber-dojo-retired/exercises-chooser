@@ -10,21 +10,26 @@ jobs:
     steps:
       - checkout
       - run:
-          name: build image
+          name: Build image
           command: |
             set -e
             ./pipe_build_up_test.sh
       - run:
-          name: publish image on dockerhub
+          name: Tag docker image
           command: |
             set -e
-            readonly image=cyberdojo/exercises
-            docker tag  ${image}:latest ${image}:${CIRCLE_SHA1:0:7}
-            docker tag  ${image}:latest ${image}:beta
-            echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
-            docker push ${image}:${CIRCLE_SHA1:0:7}
-            docker push ${image}:beta
-            docker push ${image}:latest
+            TAG=tag-image.sh
+            curl -O --fail ${CIRCLECI_SCRIPT_DIR}/${TAG}
+            chmod 700 ./${TAG}
+            ./${TAG}
+      - run:
+          name: Publish tagged docker image on dockerhub
+          command: |
+            set -e
+            PUBLISH=publish-tagged-image.sh
+            curl -O --fail ${CIRCLECI_SCRIPT_DIR}/${PUBLISH}
+            chmod 700 ./${PUBLISH}
+            ./${PUBLISH}
 
   deploy-image-to-beta:
     docker:
