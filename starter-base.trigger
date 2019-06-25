@@ -1,1 +1,1 @@
-automated build trigger from https://github.com/cyber-dojo/starter-base/commit/fed023d824a8e8b3677f9c721c442bec8a80d2a4
+automated build trigger from https://github.com/cyber-dojo/starter-base/commit/688e81439289104e5d8d63b0d1cc6bf82559c949
