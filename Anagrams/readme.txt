@@ -1,4 +1,4 @@
-Write a program to generate all potential 
+Write a program to generate all potential
 anagrams of an input string.
 
 For example, the potential anagrams of "biro" are
