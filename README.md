@@ -8,6 +8,7 @@
 ```bash
 #!/bin/bash
 set -e
+
 SCRIPT=cyber-dojo
 GITHUB_ORG=https://raw.githubusercontent.com/cyber-dojo
 curl -O --silent --fail "${GITHUB_ORG}/commander/master/${SCRIPT}"
