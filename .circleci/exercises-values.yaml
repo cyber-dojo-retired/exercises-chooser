@@ -4,7 +4,7 @@
 
 fullnameOverride: "exercises"
 
-replicaCount: 1
+replicaCount: 3
 
 service:
   port: 4525
@@ -16,7 +16,6 @@ volumes:
 containers:
   - name: exercises
     image: cyberdojo/exercises
-    tag: ""
     securityContext:
       readOnlyRootFilesystem: true
     volumeMounts:
@@ -25,9 +24,9 @@ containers:
         readOnly: false
     resources:
       limits:
-        memory: 32Mi
+        memory: 16Mi
       requests:
-        memory: 32Mi
+        memory: 16Mi
       livenessProbe:
         path: /sha
         port: 4525

@@ -1,4 +1,2 @@
 
 Edit this file for a quick way to force a CI run
-particularly when doing a commit release, eg
-docker commit -m "[RELEASE=0.0.9] ..."
