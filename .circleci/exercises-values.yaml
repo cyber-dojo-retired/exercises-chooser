@@ -11,7 +11,9 @@ service:
 
 volumes:
   - name: exercises-tmp-dir
-    emptyDir: {}
+    emptyDir:
+      medium: Memory
+      sizeLimit: "16Mi"
 
 containers:
   - name: exercises
@@ -24,9 +26,9 @@ containers:
         readOnly: false
     resources:
       limits:
-        memory: 16Mi
+        memory: 32Mi
       requests:
-        memory: 16Mi
+        memory: 32Mi
       livenessProbe:
         path: /sha
         port: 4525
