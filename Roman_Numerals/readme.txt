@@ -3,8 +3,8 @@ its Roman numeral representation as a String (eg "XLII").
 
 You cannot write numerals like IM for 999.
 Wikipedia states "Modern Roman numerals are written by
-expressing each digit separately starting with the
-leftmost digit and skipping any digit with a value of zero."
+expressing each arabic digit separately, starting with the
+leftmost digit, and skipping any digit with a value of zero."
 For example:
 
 1990 -> "MCMXC"  (1000 -> "M"  + 900 -> "CM" + 90 -> "XC")
