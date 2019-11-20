@@ -17,8 +17,6 @@ volumes:
 
 containers:
   - name: exercises
-    env:
-      PROMETHEUS_COLLECTOR_METRICS_PREFIX: "exercises"
     image: cyberdojo/exercises
     securityContext:
       readOnlyRootFilesystem: true
