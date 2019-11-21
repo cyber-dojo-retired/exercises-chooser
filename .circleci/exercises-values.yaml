@@ -19,6 +19,9 @@ containers:
   - name: exercises
     image: cyberdojo/exercises
     securityContext:
+      runAsUser: 65534 # nobody
+      fsGroup: 65534 # nobody
+      allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
     volumeMounts:
       - name: exercises-tmp-dir
