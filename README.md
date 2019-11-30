@@ -17,6 +17,7 @@ chmod 700 ./${SCRIPT}
 IMAGE_NAME=cyberdojo/exercises
 GIT_REPO_URL=https://github.com/cyber-dojo/exercises.git
 
+CYBER_DOJO_EXERCISES_PORT=4535 \
 ./${SCRIPT} start-point create \
    "${IMAGE_NAME}" \
     --exercises \

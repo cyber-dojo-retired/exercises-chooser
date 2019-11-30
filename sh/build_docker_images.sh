@@ -19,7 +19,7 @@ chmod 700 ./${SCRIPT_NAME}
 
 IMAGE_NAME=cyberdojo/exercises
 
-CYBER_DOJO_EXERCISES_PORT=4999 \
+CYBER_DOJO_EXERCISES_PORT=4535 \
 SHA="${SHA_VALUE}" \
   ./${SCRIPT_NAME} start-point create \
      ${IMAGE_NAME} \

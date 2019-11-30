@@ -6,7 +6,7 @@ readonly SHA_VALUE=$(cd "${ROOT_DIR}" && git rev-parse HEAD)
 
 IMAGE_NAME=cyberdojo/exercises
 
-CYBER_DOJO_EXERCISES_PORT=4999 \
+CYBER_DOJO_EXERCISES_PORT=4535 \
 SHA="${SHA_VALUE}" \
   ${ROOT_DIR}/../commander/cyber-dojo start-point create \
      ${IMAGE_NAME} \
