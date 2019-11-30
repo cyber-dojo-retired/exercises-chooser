@@ -4,10 +4,10 @@ fullnameOverride: "exercises"
 replicaCount: 3
 
 service:
-  port: 4525
+  port: 4999
   annotations:
     prometheus.io/scrape: "true"
-    prometheus.io/port: "4525"
+    prometheus.io/port: "4999"
 
 volumes:
   - name: exercises-tmp-dir
@@ -32,16 +32,16 @@ containers:
     resources:
       requests:
         cpu: 25m
-        memory: 64Mi
+        memory: 32Mi
       limits:
         cpu: 50m
-        memory: 128Mi
+        memory: 64Mi
     livenessProbe:
       path: /alive?
-      port: 4525
+      port: 4999
     readinessProbe:
       path: /ready?
-      port: 4525
+      port: 4999
 
 envFromSecret: {}
 
