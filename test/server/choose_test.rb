@@ -12,8 +12,8 @@ class ChooseTest < TestBase
   test '18w', %w(
   |GET/group_choose
   |offers all display_names
-  |ready to create a group
-  |when custom_start_points is online
+  |ready to choose a language
+  |when exercises_start_points is online
   ) do
     get '/group_choose'
     assert status?(200), status
@@ -30,8 +30,8 @@ class ChooseTest < TestBase
   test '19w', %w(
   |GET/kata_choose
   |offers all display_names
-  |ready to create a kata
-  |when custom_start_points is online
+  |ready to choose a language
+  |when exercises_start_points is online
   ) do
     get '/kata_choose'
     assert status?(200), status
@@ -52,7 +52,6 @@ class ChooseTest < TestBase
   end
 
   def div_for(display_name)
-    # eg cater for "C++ Countdown, Round 1"
     plain_display_name = Regexp.quote(display_name)
     /<div class="display-name">\s*#{plain_display_name}\s*<\/div>/
   end

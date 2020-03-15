@@ -30,7 +30,7 @@ class ResponseErrorTest < TestBase
   # - - - - - - - - - - - - - - - - -
 
   test 'F9p', %w(
-  |any http-serice call
+  |any http-service call
   |is a 500 error
   |when response's json.body has embedded exception
   ) do
@@ -40,7 +40,7 @@ class ResponseErrorTest < TestBase
   # - - - - - - - - - - - - - - - - -
 
   test 'F9q', %w(
-  |any http-servive call
+  |any http-service call
   |is a 500 error
   |when response's json.body has no key for method
   ) do
@@ -50,7 +50,7 @@ class ResponseErrorTest < TestBase
   private
 
   def assert_get_500(path, stub)
-    stub_custom_start_points_http(stub)
+    stub_exercises_start_points_http(stub)
     _stdout,stderr = capture_stdout_stderr {
       get path
     }
@@ -59,9 +59,9 @@ class ResponseErrorTest < TestBase
     #stdout
   end
 
-  def stub_custom_start_points_http(body)
+  def stub_exercises_start_points_http(body)
     externals.instance_exec {
-      @custom_start_points_http = HttpAdapterStub.new(body)
+      @exercises_start_points_http = HttpAdapterStub.new(body)
     }
   end
 

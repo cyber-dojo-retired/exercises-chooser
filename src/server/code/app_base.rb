@@ -41,38 +41,8 @@ class AppBase < Sinatra::Base
     end
   end
 
-  # - - - - - - - - - - - - - - - - - - - - - -
-
-  def json_args
-    symbolized(json_payload)
-  end
-
-  def params_args
-    symbolized(params)
-  end
-
   private
 
-  def symbolized(h)
-    # named-args require symbolization
-    Hash[h.map{ |key,value| [key.to_sym, value] }]
-  end
-
-  def json_payload
-    json_hash_parse(request.body.read)
-  end
-
-  def json_hash_parse(body)
-    json = (body === '') ? {} : JSON.parse!(body)
-    unless json.instance_of?(Hash)
-      fail 'body is not JSON Hash'
-    end
-    json
-  rescue JSON::ParserError
-    fail 'body is not JSON'
-  end
-
-  # - - - - - - - - - - - - - - - - - - - - - -
   set :show_exceptions, false
 
   error do
