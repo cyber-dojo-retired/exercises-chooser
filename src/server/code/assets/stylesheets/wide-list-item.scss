@@ -1,0 +1,29 @@
+
+@mixin wide-list-item
+{
+  @include plaintext-font();
+  color: $lighter-color;
+  background: $darker-color;
+  text-align: left;
+
+  border: 1px solid $darker-color;
+  margin: 0px;
+  padding: { left: 4px; right: 0px; }
+  cursor: pointer;
+
+  overflow-y: none;
+  &::-webkit-scrollbar:vertical { width: 0px; }
+  &::-webkit-scrollbar:horizontal { height: 0px; }
+  max-width: 295px;
+  overflow-x: auto;
+
+  &[class~='selected']
+  {
+    background-color: lighten($darker-color, 20%);
+    cursor: default;
+  }
+  &:hover
+  {
+    border: 1px dotted lighten($darker-color,25%);
+  }
+}

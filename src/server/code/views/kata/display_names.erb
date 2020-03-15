@@ -1,0 +1,22 @@
+<script>
+'use strict';
+$(() => {
+
+  const displayNames = $('.display-name');
+  displayNames.click((event) => {
+    cd.selectedDisplayName = $(event.target);
+    displayNames.removeClass('selected');
+    cd.selectedDisplayName.addClass('selected');
+    cd.next.prop('disabled', false);
+  });
+
+});
+</script>
+
+<div id="display-names">
+  <% @display_names.each do |display_name| %>
+    <div class="display-name">
+      <%= display_name %>
+    </div>
+  <% end %>
+</div>

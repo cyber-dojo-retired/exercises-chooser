@@ -1,0 +1,305 @@
+Run options: --seed 41643
+
+# Running:
+
+undefined method `custom_start_points' for #<Externals:0x0000558d348622b8>
+Eundefined method `custom_start_points' for #<Externals:0x0000558d33810608>
+EEEEE..{
+  "exception": {
+    "request": {
+      "path": "/ready",
+      "body": ""
+    },
+    "backtrace": [
+      "/app/code/chooser.rb:28:in `exercises_start_points'",
+      "/app/code/chooser.rb:14:in `ready?'",
+      "/app/code/app_base.rb:39:in `public_send'",
+      "/app/code/app_base.rb:39:in `block (2 levels) in probe_get'",
+      "/app/code/app_base.rb:39:in `instance_eval'",
+      "/app/code/app_base.rb:39:in `block in probe_get'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1636:in `call'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1636:in `block in compile!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:987:in `block (3 levels) in route!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1006:in `route_eval'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:987:in `block (2 levels) in route!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1035:in `block in process_route'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1033:in `catch'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1033:in `process_route'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:985:in `block in route!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:984:in `each'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:984:in `route!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1098:in `block in dispatch!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `block in invoke'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `catch'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `invoke'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1095:in `dispatch!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:919:in `block in call!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `block in invoke'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `catch'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `invoke'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:919:in `call!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:908:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/xss_header.rb:18:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/path_traversal.rb:16:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/json_csrf.rb:26:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/base.rb:50:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/base.rb:50:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/frame_options.rb:31:in `call'",
+      "/usr/local/bundle/gems/rack-2.2.2/lib/rack/null_logger.rb:11:in `call'",
+      "/usr/local/bundle/gems/rack-2.2.2/lib/rack/head.rb:12:in `call'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:194:in `call'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1951:in `call'",
+      "/usr/local/bundle/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request'",
+      "/usr/local/bundle/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request'",
+      "/usr/local/bundle/gems/rack-test-1.1.0/lib/rack/test.rb:129:in `custom_request'",
+      "/usr/local/bundle/gems/rack-test-1.1.0/lib/rack/test.rb:58:in `get'",
+      "/usr/local/lib/ruby/2.7.0/forwardable.rb:235:in `get'",
+      "/test/server/ready_test.rb:25:in `block in <class:ReadyTest>'",
+      "/test/id58_test_base.rb:36:in `instance_eval'",
+      "/test/id58_test_base.rb:36:in `block in test'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:98:in `block (3 levels) in run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:195:in `capture_exceptions'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:95:in `block (2 levels) in run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:270:in `time_it'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:94:in `block in run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:365:in `on_signal'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:211:in `with_info_handler'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:93:in `run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:1026:in `run_one_method'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:339:in `run_one_method'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:326:in `block (2 levels) in run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:325:in `each'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:325:in `block in run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:365:in `on_signal'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:352:in `with_info_handler'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:324:in `run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:164:in `block in __run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:164:in `map'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:164:in `__run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:141:in `run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:68:in `block in autorun'"
+    ],
+    "message": "undefined method `exercises_start_points' for #<ReadyTest::ExternalsReadyStub:0x0000558d348e9790>"
+  }
+}
+Expected false to be truthy.
+F{
+  "exception": {
+    "request": {
+      "path": "/ready",
+      "body": ""
+    },
+    "backtrace": [
+      "/app/code/chooser.rb:28:in `exercises_start_points'",
+      "/app/code/chooser.rb:14:in `ready?'",
+      "/app/code/app_base.rb:39:in `public_send'",
+      "/app/code/app_base.rb:39:in `block (2 levels) in probe_get'",
+      "/app/code/app_base.rb:39:in `instance_eval'",
+      "/app/code/app_base.rb:39:in `block in probe_get'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1636:in `call'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1636:in `block in compile!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:987:in `block (3 levels) in route!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1006:in `route_eval'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:987:in `block (2 levels) in route!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1035:in `block in process_route'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1033:in `catch'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1033:in `process_route'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:985:in `block in route!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:984:in `each'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:984:in `route!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1098:in `block in dispatch!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `block in invoke'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `catch'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `invoke'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1095:in `dispatch!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:919:in `block in call!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `block in invoke'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `catch'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1072:in `invoke'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:919:in `call!'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:908:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/xss_header.rb:18:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/path_traversal.rb:16:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/json_csrf.rb:26:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/base.rb:50:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/base.rb:50:in `call'",
+      "/usr/local/bundle/gems/rack-protection-2.0.8.1/lib/rack/protection/frame_options.rb:31:in `call'",
+      "/usr/local/bundle/gems/rack-2.2.2/lib/rack/null_logger.rb:11:in `call'",
+      "/usr/local/bundle/gems/rack-2.2.2/lib/rack/head.rb:12:in `call'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:194:in `call'",
+      "/usr/local/bundle/gems/sinatra-2.0.8.1/lib/sinatra/base.rb:1951:in `call'",
+      "/usr/local/bundle/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request'",
+      "/usr/local/bundle/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request'",
+      "/usr/local/bundle/gems/rack-test-1.1.0/lib/rack/test.rb:129:in `custom_request'",
+      "/usr/local/bundle/gems/rack-test-1.1.0/lib/rack/test.rb:58:in `get'",
+      "/usr/local/lib/ruby/2.7.0/forwardable.rb:235:in `get'",
+      "/test/server/ready_test.rb:35:in `block in <class:ReadyTest>'",
+      "/test/id58_test_base.rb:36:in `instance_eval'",
+      "/test/id58_test_base.rb:36:in `block in test'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:98:in `block (3 levels) in run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:195:in `capture_exceptions'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:95:in `block (2 levels) in run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:270:in `time_it'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:94:in `block in run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:365:in `on_signal'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:211:in `with_info_handler'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest/test.rb:93:in `run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:1026:in `run_one_method'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:339:in `run_one_method'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:326:in `block (2 levels) in run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:325:in `each'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:325:in `block in run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:365:in `on_signal'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:352:in `with_info_handler'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:324:in `run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:164:in `block in __run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:164:in `map'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:164:in `__run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:141:in `run'",
+      "/usr/local/bundle/gems/minitest-5.14.0/lib/minitest.rb:68:in `block in autorun'"
+    ],
+    "message": "undefined method `exercises_start_points' for #<ReadyTest::ExternalsReadyStub:0x0000558d348a5130>"
+  }
+}
+Expected false to be truthy.
+F200
+F200
+F200
+F200
+F404
+F404
+F..SimpleCov failed with exit 1
+
+Finished in 0.208665s, 86.2626 runs/s, 105.4320 assertions/s.
+
+  1) Error:
+ChooseTest#test_
+id58 '18w',
+'|GET/group_choose |offers all display_names |ready to create a group |when custom_start_points is online':
+NoMethodError: undefined method `custom_start_points' for #<Externals:0x0000558d348622b8>
+    /test/server/test_base.rb:28:in `custom_start_points'
+    /test/server/test_base.rb:24:in `display_names'
+    /test/server/choose_test.rb:23:in `block in <class:ChooseTest>'
+    /test/id58_test_base.rb:36:in `instance_eval'
+    /test/id58_test_base.rb:36:in `block in test'
+
+  2) Error:
+ChooseTest#test_
+id58 '19w',
+'|GET/kata_choose |offers all display_names |ready to create a kata |when custom_start_points is online':
+NoMethodError: undefined method `custom_start_points' for #<Externals:0x0000558d33810608>
+    /test/server/test_base.rb:28:in `custom_start_points'
+    /test/server/test_base.rb:24:in `display_names'
+    /test/server/choose_test.rb:41:in `block in <class:ChooseTest>'
+    /test/id58_test_base.rb:36:in `instance_eval'
+    /test/id58_test_base.rb:36:in `block in test'
+
+  3) Error:
+CreateTest#test_
+id58 'w9A',
+'|GET /group_create?display_names[]=... |redirects to /kata/group/:id page |and a group with :id exists':
+NoMethodError: undefined method `custom_start_points' for #<Externals:0x0000558d340d0810>
+    /test/server/test_base.rb:28:in `custom_start_points'
+    /test/server/test_base.rb:24:in `display_names'
+    /test/server/create_test.rb:15:in `id58_setup'
+    /test/id58_test_base.rb:33:in `block in test'
+
+  4) Error:
+CreateTest#test_
+id58 'w9B',
+'|GET /kata_create?display_name=... |redirects to /kata/edit/:id page |and a kata with :id exists':
+NoMethodError: undefined method `custom_start_points' for #<Externals:0x0000558d340d00e0>
+    /test/server/test_base.rb:28:in `custom_start_points'
+    /test/server/test_base.rb:24:in `display_names'
+    /test/server/create_test.rb:15:in `id58_setup'
+    /test/id58_test_base.rb:33:in `block in test'
+
+  5) Error:
+CreateTest#test_
+id58 'w9D',
+'|POST /kata_create body={"display_name":"..."} |returns json payload |with {"kata_create":"ID"} |where a kata with ID exists':
+NoMethodError: undefined method `custom_start_points' for #<Externals:0x0000558d340cb6f8>
+    /test/server/test_base.rb:28:in `custom_start_points'
+    /test/server/test_base.rb:24:in `display_names'
+    /test/server/create_test.rb:15:in `id58_setup'
+    /test/id58_test_base.rb:33:in `block in test'
+
+  6) Error:
+CreateTest#test_
+id58 'w9C',
+'|POST /group_create body={"display_names":[...]} |returns json payload |with {"group_create":"ID"} |where a group with ID exists':
+NoMethodError: undefined method `custom_start_points' for #<Externals:0x0000558d340c9bc8>
+    /test/server/test_base.rb:28:in `custom_start_points'
+    /test/server/test_base.rb:24:in `display_names'
+    /test/server/create_test.rb:15:in `id58_setup'
+    /test/id58_test_base.rb:33:in `block in test'
+
+  7) Failure:
+ReadyTest#test_
+id58 '15E',
+'not ready when creator is not ready' [/test/server/ready_test.rb:26]:
+Expected false to be truthy.
+
+  8) Failure:
+ReadyTest#test_
+id58 '15F',
+'not ready when custom-start-points is not ready' [/test/server/ready_test.rb:36]:
+Expected false to be truthy.
+
+  9) Failure:
+ResponseErrorTest#test_
+id58 'F9q',
+'|any http-servive call |is a 500 error |when response's json.body has no key for method' [/test/server/response_error_test.rb:47]:
+200
+
+ 10) Failure:
+ResponseErrorTest#test_
+id58 'F9p',
+'|any http-serice call |is a 500 error |when response's json.body has embedded exception' [/test/server/response_error_test.rb:37]:
+200
+
+ 11) Failure:
+ResponseErrorTest#test_
+id58 'F9k',
+'|any http-service call |is a 500 error |when response's json.body is not JSON-Hash' [/test/server/response_error_test.rb:27]:
+200
+
+ 12) Failure:
+ResponseErrorTest#test_
+id58 'F8k',
+'|any http-service call |is a 500 error |when response's json.body is not JSON' [/test/server/response_error_test.rb:17]:
+200
+
+ 13) Failure:
+RequestErrorTest#test_
+id58 'Je4',
+'|POST with non-JSON in request.body |is 500 error' [/test/server/request_error_test.rb:21]:
+404
+
+ 14) Failure:
+RequestErrorTest#test_
+id58 'Je5',
+'|POST with non-JSON-Hash in request.body |is 500 error' [/test/server/request_error_test.rb:35]:
+404
+
+18 runs, 22 assertions, 8 failures, 6 errors, 0 skips
+Coverage report generated for MiniTest to //tmp/reports. 12861 / 24283 LOC (52.96%) covered.
+
+Slowest 4 tests are...
+0.0929 - Q3p2Je:assets_test.rb:12:|GET /assets/app.css is served                 
+0.0053 - de3p23:sha_test.rb:12:sha is 40-char git commit sha                     
+0.0043 - a8615D:ready_test.rb:13:ready when custom-start-points and saver are both ready
+0.0008 - d5ae5K:alive_test.rb:12:its alive!                                      
+
+
+                 failures |       8   <=     0 | [31m false [0m
+                   errors |       6   <=     0 | [31m false [0m
+                 warnings |       0   <=     0 | [32m true [0m
+                    skips |       0   <=     0 | [32m true [0m
+        duration(test)[s] |    0.21   <=     5 | [32m true [0m
+                    tests |      18   >=     1 | [32m true [0m
+      coverage(tested)[%] |   85.88   >=   100 | [31m false [0m
+      coverage(tester)[%] |   73.23   >=   100 | [31m false [0m
+     lines(tester/tested) |    1.12   >=   0.8 | [32m true [0m
+      hits(tested/tester) |    1.59   >=   1.2 | [32m true [0m
+

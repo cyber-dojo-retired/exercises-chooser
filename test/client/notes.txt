@@ -1,0 +1,3 @@
+https://medium.com/@jfroom/docker-compose-capybara-selenium-standalone-for-dev-ci-6514bf16d77b
+https://ahmetkizilay.com/2016/02/07/dockerized-selenium-testing-with-capybara.html
+https://www.alfredo.motta.name/dockerized-rails-capybara-tests-on-top-of-selenium/

@@ -1,0 +1,69 @@
+
+version: '3.7'
+
+services:
+
+  nginx:
+    build:
+      context: src/nginx_stub
+    container_name: test-nginx
+    depends_on:
+      - exercises-chooser-server
+    image: cyberdojo/nginx_exercises_stub
+    init: true
+    ports: [ "80:80" ]
+    user: root
+
+  #- - - - - - - - - - - - - - - - - - - - - - - - - - -
+  exercises-chooser-client:
+    build:
+      args: [ COMMIT_SHA, CYBER_DOJO_EXERCISES_CHOOSER_CLIENT_PORT ]
+      context: src/client
+    container_name: test-exercises-chooser-client
+    depends_on:
+      - exercises-chooser-server
+      - selenium
+    image: cyberdojo/test-exercises-chooser-client
+    init: true
+    ports: [ "${CYBER_DOJO_EXERCISES_CHOOSER_CLIENT_PORT}:${CYBER_DOJO_EXERCISES_CHOOSER_CLIENT_PORT}" ]
+    read_only: true
+    restart: "no"
+    tmpfs: /tmp
+    user: nobody
+    volumes: [ "./test:/test/:ro" ]
+
+  #- - - - - - - - - - - - - - - - - - - - - - - - - - -
+  exercises-chooser-server:
+    build:
+      args: [ COMMIT_SHA, CYBER_DOJO_EXERCISES_CHOOSER_PORT ]
+      context: src/server
+    container_name: test-exercises-chooser-server
+    depends_on:
+      - exercises-start-points
+    environment: [ NO_PROMETHEUS ]
+    image: ${CYBER_DOJO_EXERCISES_CHOOSER_IMAGE}
+    init: true
+    ports: [ "${CYBER_DOJO_EXERCISES_CHOOSER_PORT}:${CYBER_DOJO_EXERCISES_CHOOSER_PORT}" ]
+    read_only: true
+    restart: "no"
+    tmpfs: /tmp
+    user: nobody
+    volumes: [ "./test:/test/:ro" ]
+
+  #- - - - - - - - - - - - - - - - - - - - - - - - - - -
+  exercises-start-points:
+    container_name: test-exercises-start-points
+    environment: [ NO_PROMETHEUS ]
+    image: ${CYBER_DOJO_EXERCISES_START_POINTS_IMAGE}:${CYBER_DOJO_EXERCISES_START_POINTS_TAG}
+    init: true
+    ports: [ "${CYBER_DOJO_EXERCISES_START_POINTS_PORT}:${CYBER_DOJO_EXERCISES_START_POINTS_PORT}" ]
+    read_only: true
+    restart: 'no'
+    tmpfs: /tmp
+    user: nobody
+
+  #- - - - - - - - - - - - - - - - - - - - - - - - - - -
+  selenium:
+    container_name: test-selenium
+    image: selenium/standalone-firefox
+    ports: [ "4444:4444" ]

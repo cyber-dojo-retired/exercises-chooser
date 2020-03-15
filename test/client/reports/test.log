@@ -1,0 +1,53 @@
+Run options: --seed 1935
+
+# Running:
+
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/driver.rb:39: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/bridge.rb:44: warning: The called method `handshake' is defined here
+..
+
+Finished in 9.404716s, 0.2127 runs/s, 0.6380 assertions/s.
+
+2 runs, 6 assertions, 0 failures, 0 errors, 0 skips
+Coverage report generated for MiniTest to //tmp/reports. 11827 / 26482 LOC (44.66%) covered.
+
+Slowest 2 tests are...
+8.4228 - xRae5D:create_test.rb:16:|PATH /custom-chooser/group_choose |shows custom display-names |selecting one |clicking [ok] button |redirects to /kata/group/:ID
+0.6768 - xRae5E:create_test.rb:35:|PATH /custom-chooser/kata_choose shows |custom display-names |selecting one |clicking [ok] button |redirects to /kata/edit/:ID
+
+
+                 failures |       0   <=     0 | [32m true [0m
+                   errors |       0   <=     0 | [32m true [0m
+                 warnings |       2   <=     2 | [32m true [0m
+                    skips |       0   <=     0 | [32m true [0m
+        duration(test)[s] |     9.4   <=    15 | [32m true [0m
+                    tests |       2   >=     1 | [32m true [0m
+      coverage(tested)[%] |   100.0   >=   100 | [32m true [0m
+      coverage(tester)[%] |   100.0   >=   100 | [32m true [0m
+     lines(tester/tested) |    0.74   >=   0.7 | [32m true [0m
+      hits(tested/tester) |    1.75   >=   1.7 | [32m true [0m
+
+
+                 failures |       0   <=     0 | [32m true [0m
+                   errors |       0   <=     0 | [32m true [0m
+                 warnings |       2   <=     2 | [32m true [0m
+                    skips |       0   <=     0 | [32m true [0m
+        duration(test)[s] |     9.4   <=    15 | [32m true [0m
+                    tests |       2   >=     1 | [32m true [0m
+      coverage(tested)[%] |   100.0   >=   100 | [32m true [0m
+      coverage(tester)[%] |   100.0   >=   100 | [32m true [0m
+     lines(tester/tested) |    0.74   >=   0.7 | [32m true [0m
+      hits(tested/tester) |    1.75   >=   1.7 | [32m true [0m
+
+
+                 failures |       0   <=     0 | [32m true [0m
+                   errors |       0   <=     0 | [32m true [0m
+                 warnings |       2   <=     2 | [32m true [0m
+                    skips |       0   <=     0 | [32m true [0m
+        duration(test)[s] |     9.4   <=    15 | [32m true [0m
+                    tests |       2   >=     1 | [32m true [0m
+      coverage(tested)[%] |   100.0   >=   100 | [32m true [0m
+      coverage(tester)[%] |   100.0   >=   100 | [32m true [0m
+     lines(tester/tested) |    0.74   >=   0.7 | [32m true [0m
+      hits(tested/tester) |    1.75   >=   1.7 | [32m true [0m
+

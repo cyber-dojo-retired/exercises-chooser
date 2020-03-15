@@ -1,0 +1,17 @@
+<script>
+'use strict';
+$(() => {
+
+  cd.next = $('button#next');
+  cd.next.prop('disabled', true).click(() => {
+    const displayName = cd.selectedDisplayName.text().trim();
+    const params = `display_name=${encodeURIComponent(displayName)}`;
+    window.location = `<%= @next_url %>?${params}`;
+  });
+
+});
+</script>
+
+<div>
+  <button type="button" id="next">next</button>
+</div>
