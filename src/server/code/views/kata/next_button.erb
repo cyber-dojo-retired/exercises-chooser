@@ -5,7 +5,7 @@ $(() => {
   cd.next = $('button#next');
   cd.next.prop('disabled', true).click(() => {
     const displayName = cd.selectedDisplayName.text().trim();
-    const params = `display_name=${encodeURIComponent(displayName)}`;
+    const params = `exercise_name=${encodeURIComponent(displayName)}`;
     window.location = `<%= @next_url %>?${params}`;
   });
 

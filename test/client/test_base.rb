@@ -10,13 +10,13 @@ class TestBase < Id58TestBase
   Capybara.register_driver :selenium do |app|
     Capybara::Selenium::Driver.new(app,
       browser: :remote,
-      url: "http://selenium:4444/wd/hub",
+      url: 'http://selenium:4444/wd/hub',
       desired_capabilities: :firefox
     )
   end
 
   def setup
-    Capybara.app_host = "http://nginx:80"
+    Capybara.app_host = 'http://nginx:80'
     Capybara.javascript_driver = :selenium
     Capybara.current_driver    = :selenium
     Capybara.run_server = false

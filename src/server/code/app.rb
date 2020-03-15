@@ -40,7 +40,7 @@ class App < AppBase
     respond_to do |format|
       format.html do
         @display_names = target.display_names
-        @next_url = '/languages-chooser/kata_create'
+        @next_url = '/languages-chooser/kata_choose'
         erb :'kata/choose'
       end
     end
