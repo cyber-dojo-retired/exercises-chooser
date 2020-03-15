@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require_relative 'test_base'
+require 'json'
 
 class ResponseErrorTest < TestBase
 
@@ -45,6 +46,28 @@ class ResponseErrorTest < TestBase
   |when response's json.body has no key for method
   ) do
     assert_get_500('/kata_choose', _no_key='{}')
+  end
+
+  # - - - - - - - - - - - - - - - - -
+
+  test 'F9r', %w(
+  |any non-http-service call error
+  |is also a 500 error
+  ) do
+    externals.instance_exec {
+      @exercises_start_points = Class.new do
+        def ready?
+          raise 'call-error'
+        end
+      end.new
+    }
+    stdout,stderr = capture_stdout_stderr {
+      get '/ready'
+    }
+    assert status?(500), status
+    assert_equal '', stderr, :stderr_is_empty
+    json = JSON.parse!(stdout)
+    assert_equal 'call-error', json['exception']['message']
   end
 
   private
