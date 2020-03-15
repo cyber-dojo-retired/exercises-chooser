@@ -20,7 +20,7 @@ class ChooseTest < TestBase
     visit('/exercises-chooser/group_choose')
     display_name = 'Calc Stats'
     find('div.display-name', text:display_name).click
-    find('#next').click
+    find('button#next').click
     assert %r"/languages-chooser/group_choose\?exercise_name=(?<name>.*)" =~ current_url, current_url
     assert_equal 'Calc%20Stats', name
   end
@@ -37,7 +37,7 @@ class ChooseTest < TestBase
     visit('/exercises-chooser/kata_choose')
     display_name = 'Calc Stats'
     find('div.display-name', text:display_name).click
-    find('#next').click
+    find('button#next').click
     assert %r"/languages-chooser/kata_choose\?exercise_name=(?<name>.*)" =~ current_url, current_url
     assert_equal 'Calc%20Stats', name
   end

@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 require_relative '../id58_test_base'
 require 'capybara/minitest'
+require_src 'app'
+require_src 'externals'
 
 class TestBase < Id58TestBase
 
   include Capybara::DSL
   include Capybara::Minitest::Assertions
+  include Rack::Test::Methods # [1]
 
   Capybara.register_driver :selenium do |app|
     Capybara::Selenium::Driver.new(app,
@@ -31,6 +34,14 @@ class TestBase < Id58TestBase
 
   def initialize(arg)
     super(arg)
+  end
+
+  def externals
+    @externals ||= Externals.new
+  end
+
+  def app
+    App.new(externals) # [1]
   end
 
 end
