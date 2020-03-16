@@ -7,7 +7,7 @@ $(() => {
     cd.selectedDisplayName = $(event.target);
     displayNames.removeClass('selected');
     cd.selectedDisplayName.addClass('selected');
-    //TODO:show instructions
+    //TODO:show display_contents
   });
   const random = (n) => Math.floor(Math.random() * n);
   const any = random(displayNames.length);
@@ -24,7 +24,7 @@ $(() => {
   <% end %>
 </div>
 
-<% @instructions.each.with_index do |text,index| %>
-   <textarea style="display:none;" id="instructions_<%= index %>"><%= text %>
+<% @display_contents.each.with_index do |content,index| %>
+   <textarea style="display:none;" id="instructions_<%= index %>"><%= content %>
    </textarea>
 <% end %>

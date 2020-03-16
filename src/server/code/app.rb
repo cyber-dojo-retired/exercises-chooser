@@ -53,14 +53,14 @@ class App < AppBase
   #  CGI.escapeHTML(html)
   #end
 
-  private 
+  private
 
   def set_view_data
     manifests = target.manifests
     @display_names = manifests.keys.sort
-    @instructions = []
+    @display_contents = []
     @display_names.each do |name|
-      @instructions << selected(manifests[name]['visible_files'])
+      @display_contents << selected(manifests[name]['visible_files'])
     end
   end
 
