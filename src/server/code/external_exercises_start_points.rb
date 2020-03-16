@@ -11,8 +11,8 @@ class ExternalExercisesStartPoints
     @http.get(__method__, {})
   end
 
-  def display_names
-    @http.get(:names, {})
+  def manifests
+    @http.get(__method__, {})
   end
 
 end

@@ -18,8 +18,8 @@ class Chooser
     ENV['SHA']
   end
 
-  def display_names
-    exercises_start_points.display_names
+  def manifests
+    exercises_start_points.manifests
   end
 
   private

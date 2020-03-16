@@ -21,7 +21,8 @@ class TestBase < Id58TestBase
   end
 
   def display_names
-    exercises_start_points.display_names
+    manifests = exercises_start_points.manifests
+    manifests.keys.sort
   end
 
   def exercises_start_points

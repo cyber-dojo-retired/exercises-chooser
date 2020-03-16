@@ -26,7 +26,8 @@ class App < AppBase
   get '/group_choose', provides:[:html] do
     respond_to do |format|
       format.html do
-        @display_names = target.display_names
+        manifests = target.manifests
+        @display_names = manifests.keys.sort
         @next_url = '/languages-chooser/group_choose'
         erb :'group/choose'
       end
@@ -39,7 +40,8 @@ class App < AppBase
   get '/kata_choose', provides:[:html] do
     respond_to do |format|
       format.html do
-        @display_names = target.display_names
+        manifests = target.manifests
+        @display_names = manifests.keys.sort
         @next_url = '/languages-chooser/kata_choose'
         erb :'kata/choose'
       end
