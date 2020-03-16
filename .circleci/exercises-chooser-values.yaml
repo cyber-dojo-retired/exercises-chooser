@@ -31,11 +31,11 @@ containers:
         readOnly: false
     resources:
       requests:
-        cpu: 25m
+        cpu: 10m
         memory: 32Mi
       limits:
-        cpu: 50m
-        memory: 64Mi
+        cpu: 500m
+        memory: 128Mi
     livenessProbe:
       path: /alive?
       port: 4535
