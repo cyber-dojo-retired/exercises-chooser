@@ -1,29 +1,29 @@
-Run options: --seed 564
+Run options: --seed 61755
 
 # Running:
 
-../usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/driver.rb:39: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/driver.rb:39: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
 /usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/bridge.rb:44: warning: The called method `handshake' is defined here
-...
+.....
 
-Finished in 7.384535s, 0.6771 runs/s, 1.3542 assertions/s.
+Finished in 7.878709s, 0.6346 runs/s, 1.2692 assertions/s.
 
 5 runs, 10 assertions, 0 failures, 0 errors, 0 skips
 Coverage report generated for MiniTest to //tmp/reports. 18092 / 39580 LOC (45.71%) covered.
 
 Slowest 5 tests are...
-6.3786 - xRae5D:choose_test.rb:13:|PATH /exercises-chooser/group_choose |shows exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/group_choose?exercise_name=SELECTED
-0.6595 - xRae5E:choose_test.rb:30:|PATH /exercises-chooser/kata_choose |show exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/kata_choose?exercise_name=SELECTED
-0.0300 - de3p23:sha_test.rb:12:sha is 40-char git commit sha                     
-0.0010 - d5ae5K:alive_test.rb:12:its alive!                                      
-0.0009 - a8615D:ready_test.rb:13:ready when exercises-start-points is ready      
+6.8225 - xRae5E:choose_test.rb:30:|PATH /exercises-chooser/kata_choose |show exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/kata_choose?exercise_name=SELECTED
+0.7064 - xRae5D:choose_test.rb:13:|PATH /exercises-chooser/group_choose |shows exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/group_choose?exercise_name=SELECTED
+0.0325 - d5ae5K:alive_test.rb:12:its alive!                                      
+0.0037 - de3p23:sha_test.rb:12:sha is 40-char git commit sha                     
+0.0013 - a8615D:ready_test.rb:13:ready when exercises-start-points is ready      
 
 
                  failures |       0   <=     0 | [32m true [0m
                    errors |       0   <=     0 | [32m true [0m
                  warnings |       2   <=     2 | [32m true [0m
                     skips |       0   <=     0 | [32m true [0m
-        duration(test)[s] |    7.38   <=    15 | [32m true [0m
+        duration(test)[s] |    7.88   <=    15 | [32m true [0m
                     tests |       5   >=     1 | [32m true [0m
       coverage(tested)[%] |   100.0   >=   100 | [32m true [0m
       coverage(tester)[%] |   100.0   >=   100 | [32m true [0m
