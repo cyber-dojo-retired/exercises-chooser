@@ -25,6 +25,6 @@ $(() => {
 </div>
 
 <% @display_contents.each.with_index do |content,index| %>
-   <textarea style="display:none;" id="instructions_<%= index %>"><%= content %>
+   <textarea style="display:none;" id="instructions_<%= index %>"><%= h content %>
    </textarea>
 <% end %>

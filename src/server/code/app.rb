@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require_relative 'chooser.rb'
 require_relative 'app_base'
+require_relative 'escape_html_helper'
 require_relative 'selected_helper'
 
 class App < AppBase
@@ -47,12 +48,6 @@ class App < AppBase
     end
   end
 
-  # - - - - - - - - - - - - - - - - - - - - - -
-
-  #def h(html)
-  #  CGI.escapeHTML(html)
-  #end
-
   private
 
   def set_view_data
@@ -64,6 +59,7 @@ class App < AppBase
     end
   end
 
+  include EscapeHtmlHelper
   include SelectedHelper
 
 end
