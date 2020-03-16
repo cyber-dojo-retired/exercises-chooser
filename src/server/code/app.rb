@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 require_relative 'chooser.rb'
 require_relative 'app_base'
+require_relative 'selected_helper'
 
 class App < AppBase
 
@@ -52,23 +53,17 @@ class App < AppBase
   #  CGI.escapeHTML(html)
   #end
 
-  # - - - - - - - - - - - - - - - - - - - - - -
+  private 
 
   def set_view_data
     manifests = target.manifests
     @display_names = manifests.keys.sort
     @instructions = []
     @display_names.each do |name|
-      @instructions << largest(manifests[name]['visible_files'])
+      @instructions << selected(manifests[name]['visible_files'])
     end
   end
 
-  def largest(visible_files)
-    visible_files.max{ |lhs,rhs|
-      # :nocov:
-      lhs[1]['content'].size <=> rhs[1]['content'].size
-      # :nocov:
-    }[1]['content']
-  end
+  include SelectedHelper
 
 end
