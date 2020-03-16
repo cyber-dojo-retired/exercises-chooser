@@ -2,12 +2,15 @@
 'use strict';
 $(() => {
 
+  const exerciseInfoBox = $('#exercise-info-box');
   const displayNames = $('.display-name');
   displayNames.click((event) => {
     cd.selectedDisplayName = $(event.target);
     displayNames.removeClass('selected');
     cd.selectedDisplayName.addClass('selected');
-    //TODO:show display_contents
+    const index = cd.selectedDisplayName.data('index');
+    const content = $(`#instructions_${index}`).val();
+    exerciseInfoBox.val(content);
   });
   const random = (n) => Math.floor(Math.random() * n);
   const any = random(displayNames.length);
@@ -16,15 +19,26 @@ $(() => {
 });
 </script>
 
-<div id="display-names">
-  <% @display_names.each.with_index do |display_name,index| %>
-    <div class="display-name" data-index="<%= index %>">
-      <%= display_name %>
-    </div>
-  <% end %>
-</div>
+<table class="align-center">
+  <tr>
+    <td>
+      <div id="display-names">
+        <% @display_names.each.with_index do |display_name,index| %>
+          <div class="display-name" data-index="<%= index %>">
+            <%= display_name %>
+          </div>
+        <% end %>
+      </div>
+    </td>
+    <td>
+      <textarea id="exercise-info-box" readonly="readonly"></textarea>
+    </td>
+  </tr>
+</table>
 
+<div style="display:none;">
 <% @display_contents.each.with_index do |content,index| %>
-   <textarea style="display:none;" id="instructions_<%= index %>"><%= h content %>
+   <textarea id="instructions_<%= index %>"><%= h content %>
    </textarea>
 <% end %>
+</div>

@@ -6,6 +6,7 @@
 @import "wide-list-item";
 @import "button";
 @import "body";
+@import "center";
 
 #exercises-chooser-page
 {
@@ -24,15 +25,13 @@
     text-align: center;
   }
 
-  #display-names
+  #display-names, #exercise-info-box
   {
-    max-width: 375px;
-    width: 375px;
     height: 340px;
     padding: 6px;
     margin-right: 5px;
     overflow-y: auto;
-    overflow-x: none;
+    overflow-x: auto;
     @include edged-panel();
     .display-name
     {
@@ -40,6 +39,9 @@
       max-width: 375px;
     }
   }
+  #display-names     { width: 250px; max-width: 250px; }
+  #exercise-info-box { width: 500px; max-width: 500px; }
+
 
   button#next
   {
