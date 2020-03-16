@@ -31,13 +31,8 @@ demo()
   echo
   curl_200           GET  assets/app.css 'Content-Type: text/css'
   echo
-  curl_200           GET  group_choose  exercise
-  #curl_params_302    GET  group_create "$(params_display_names)"
-  #curl_json_body_200 POST group_create "$(json_display_names)"
-  echo
-  curl_200           GET  kata_choose   exercise
-  #curl_params_302    GET  kata_create  "$(params_display_name)"
-  #curl_json_body_200 POST kata_create  "$(json_display_name)"
+  curl_200           GET  group_choose  create
+  curl_200           GET  kata_choose   create
 }
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -60,27 +55,6 @@ curl_json_body_200()
     grep --quiet 200 "${log}"             # eg HTTP/1.1 200 OK
     local -r result=$(tail -n 1 "${log}") # eg {"sha":"78c19640aa43ea214da17d0bcb16abbd420d7642"}
     echo "$(tab)${type} ${route} => 200 ${result}"
-}
-
-#- - - - - - - - - - - - - - - - - - - - - - - - - - -
-curl_params_302()
-{
-  local -r log=/tmp/creator.log
-  local -r type="${1}"     # eg GET|POST
-  local -r route="${2}"    # eg create_kata
-  local -r params="${3:-}" # eg "display_name=Java Countdown, Round 1"
-  curl  \
-    --data-urlencode "${params}" \
-    --fail \
-    --request "${type}" \
-    --silent \
-    --verbose \
-      "http://${IP_ADDRESS}:$(port)/${route}" \
-      > "${log}" 2>&1
-
-    grep --quiet 302 "${log}"                 # eg HTTP/1.1 302 Moved Temporarily
-    local -r result=$(grep Location "${log}") # Location: http://192.168.99.100:4536/kata/edit/5B65RC
-    echo "$(tab)${type} ${route} => 302 ${result}"
 }
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - -
