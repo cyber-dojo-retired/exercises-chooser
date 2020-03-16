@@ -25,7 +25,7 @@
     text-align: center;
   }
 
-  #display-names, #exercise-info-box
+  #display-names, #display-content
   {
     height: 340px;
     padding: 6px;
@@ -33,15 +33,14 @@
     overflow-y: auto;
     overflow-x: auto;
     @include edged-panel();
-    .display-name
-    {
-      @include wide-list-item();
-      max-width: 375px;
-    }
   }
-  #display-names     { width: 250px; max-width: 250px; }
-  #exercise-info-box { width: 500px; max-width: 500px; }
-
+  #display-names   { width: 250px; max-width: 250px; }
+  #display-content { width: 500px; max-width: 500px; }
+  #display-names .display-name
+  {
+    @include wide-list-item();
+    max-width: 375px;
+  }
 
   button#next
   {
