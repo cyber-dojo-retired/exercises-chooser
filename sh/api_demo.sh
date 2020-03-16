@@ -73,7 +73,7 @@ curl_200()
       > "${log}" 2>&1
 
     grep --quiet 200 "${log}" # eg HTTP/1.1 200 OK
-    local -r result=$(grep "${pattern}" "${log}")
+    local -r result=$(grep "${pattern}" "${log}" | head -n 1)
     echo "$(tab)${type} ${route} => 200 ${result}"
 }
 

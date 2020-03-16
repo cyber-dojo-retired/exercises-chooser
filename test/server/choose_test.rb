@@ -53,7 +53,7 @@ class ChooseTest < TestBase
 
   def div_for(display_name)
     plain_display_name = Regexp.quote(display_name)
-    /<div class="display-name">\s*#{plain_display_name}\s*<\/div>/
+    /<div class="display-name".*>\s*#{plain_display_name}\s*<\/div>/
   end
 
 end

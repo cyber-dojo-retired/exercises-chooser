@@ -26,8 +26,7 @@ class App < AppBase
   get '/group_choose', provides:[:html] do
     respond_to do |format|
       format.html do
-        manifests = target.manifests
-        @display_names = manifests.keys.sort
+        set_view_data
         @next_url = '/languages-chooser/group_choose'
         erb :'group/choose'
       end
@@ -40,12 +39,36 @@ class App < AppBase
   get '/kata_choose', provides:[:html] do
     respond_to do |format|
       format.html do
-        manifests = target.manifests
-        @display_names = manifests.keys.sort
+        set_view_data
         @next_url = '/languages-chooser/kata_choose'
         erb :'kata/choose'
       end
     end
+  end
+
+  # - - - - - - - - - - - - - - - - - - - - - -
+
+  #def h(html)
+  #  CGI.escapeHTML(html)
+  #end
+
+  # - - - - - - - - - - - - - - - - - - - - - -
+
+  def set_view_data
+    manifests = target.manifests
+    @display_names = manifests.keys.sort
+    @instructions = []
+    @display_names.each do |name|
+      @instructions << largest(manifests[name]['visible_files'])
+    end
+  end
+
+  def largest(visible_files)
+    visible_files.max{ |lhs,rhs|
+      # :nocov:
+      lhs[1]['content'].size <=> rhs[1]['content'].size
+      # :nocov:
+    }[1]['content']
   end
 
 end

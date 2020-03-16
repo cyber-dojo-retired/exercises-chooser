@@ -1,4 +1,4 @@
-Run options: --seed 13718
+Run options: --seed 7384
 
 # Running:
 
@@ -6,16 +6,16 @@ Run options: --seed 13718
 /usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/bridge.rb:44: warning: The called method `handshake' is defined here
 ..
 
-Finished in 7.976268s, 0.6269 runs/s, 1.2537 assertions/s.
+Finished in 7.308598s, 0.6841 runs/s, 1.3683 assertions/s.
 
 5 runs, 10 assertions, 0 failures, 0 errors, 0 skips
 Coverage report generated for MiniTest to //tmp/reports. 18092 / 39580 LOC (45.71%) covered.
 
 Slowest 5 tests are...
-7.0294 - xRae5D:choose_test.rb:13:|PATH /exercises-chooser/group_choose |shows exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/group_choose?exercise_name=SELECTED
-0.6528 - xRae5E:choose_test.rb:30:|PATH /exercises-chooser/kata_choose |show exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/kata_choose?exercise_name=SELECTED
-0.0331 - de3p23:sha_test.rb:12:sha is 40-char git commit sha                     
-0.0009 - a8615D:ready_test.rb:13:ready when exercises-start-points is ready      
+6.3138 - xRae5E:choose_test.rb:30:|PATH /exercises-chooser/kata_choose |show exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/kata_choose?exercise_name=SELECTED
+0.6891 - xRae5D:choose_test.rb:13:|PATH /exercises-chooser/group_choose |shows exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/group_choose?exercise_name=SELECTED
+0.0291 - a8615D:ready_test.rb:13:ready when exercises-start-points is ready      
+0.0018 - de3p23:sha_test.rb:12:sha is 40-char git commit sha                     
 0.0009 - d5ae5K:alive_test.rb:12:its alive!                                      
 
 
@@ -23,7 +23,7 @@ Slowest 5 tests are...
                    errors |       0   <=     0 | [32m true [0m
                  warnings |       2   <=     2 | [32m true [0m
                     skips |       0   <=     0 | [32m true [0m
-        duration(test)[s] |    7.98   <=    15 | [32m true [0m
+        duration(test)[s] |    7.31   <=    15 | [32m true [0m
                     tests |       5   >=     1 | [32m true [0m
       coverage(tested)[%] |   100.0   >=   100 | [32m true [0m
       coverage(tester)[%] |   100.0   >=   100 | [32m true [0m
