@@ -7,8 +7,10 @@ $(() => {
     cd.selectedDisplayName = $(event.target);
     displayNames.removeClass('selected');
     cd.selectedDisplayName.addClass('selected');
-    cd.next.prop('disabled', false);
   });
+  const random = (n) => Math.floor(Math.random() * n);
+  const any = random(displayNames.length);
+  $(displayNames[any]).click().scrollIntoView();
 
 });
 </script>

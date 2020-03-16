@@ -2,8 +2,7 @@
 'use strict';
 $(() => {
 
-  cd.next = $('button#next');
-  cd.next.prop('disabled', true).click(() => {
+  $('button#next').click(() => {
     const displayName = cd.selectedDisplayName.text().trim();
     const params = `exercise_name=${encodeURIComponent(displayName)}`;
     window.location = `<%= @next_url %>?${params}`;
