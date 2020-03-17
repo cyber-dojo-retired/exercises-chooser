@@ -6,7 +6,6 @@ replicaCount: 3
 service:
   annotations:
     prometheus.io/scrape: "true"
-    prometheus.io/port: "4535"
 
 volumes:
   - name: exercises-chooser-tmp-dir
