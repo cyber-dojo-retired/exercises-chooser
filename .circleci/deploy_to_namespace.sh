@@ -1,19 +1,22 @@
 #!/bin/bash -Eeu
 
-readonly SH_DIR="$(cd "$(dirname "${0}")/../sh" && pwd)"
-source ${SH_DIR}/versioner_env_vars.sh
-echo '---------------------'
-sudo versioner_env_vars
-echo '---------------------'
-export $(sudo versioner_env_vars)
-echo '~~~~~~~~~~~~~~~~~~~~~'
-env
-echo '~~~~~~~~~~~~~~~~~~~~~'
+# Normally I export the cyberdojo env-vars using the command
+# $ docker run --rm cyberdojo/versioner:latest
+# This won't work on the.circleci deployment step since it is
+# run inside the cyberdojo/gcloud-kubectl-helm image which does
+# not have docker.
+# So I need to do it another way.
+# Does cyberdojo/gcloud-kubectl-helm have git installed?
+git --version
 
 readonly NAMESPACE="${1}" # eg beta
-readonly IMAGE="${CYBER_DOJO_EXERCISES_CHOOSER_IMAGE}"
-readonly PORT="${CYBER_DOJO_EXERCISES_CHOOSER_PORT}"
-readonly TAG="${CIRCLE_SHA1:0:7}"
+#readonly IMAGE="${CYBER_DOJO_EXERCISES_CHOOSER_IMAGE}"
+#readonly PORT="${CYBER_DOJO_EXERCISES_CHOOSER_PORT}"
+#readonly TAG="${CIRCLE_SHA1:0:7}"
+# --set-string containers[0].image=${IMAGE} \
+# --set service.port=${PORT} \
+# --set containers[0].livenessProbe.port=${PORT} \
+# --set containers[0].readinessProbe.port=${PORT} \
 
 # misc env-vars are in ci context
 
@@ -35,11 +38,7 @@ helm repo add praqma https://praqma-helm-repo.s3.amazonaws.com/
 helm upgrade \
   --install \
   --namespace=${NAMESPACE} \
-  --set-string containers[0].image=${IMAGE} \
   --set-string containers[0].tag=${TAG} \
-  --set service.port=${PORT} \
-  --set containers[0].livenessProbe.port=${PORT} \
-  --set containers[0].readinessProbe.port=${PORT} \
   --values .circleci/exercises-chooser-values.yaml \
   ${NAMESPACE}-exercises-chooser \
   praqma/cyber-dojo-service \
