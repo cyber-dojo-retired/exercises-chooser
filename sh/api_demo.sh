@@ -14,10 +14,10 @@ main()
   echo
   demo
   echo
-  if [ "${1:-}" == 'browser' ]; then
-    open "http://${IP_ADDRESS}:80/exercises-chooser/group_choose"
-  else
+  if [ "${1:-}" == '--no-browser' ]; then
     "${SH_DIR}/containers_down.sh"
+  else
+    open "http://${IP_ADDRESS}:80/exercises-chooser/group_choose"
   fi
 }
 
