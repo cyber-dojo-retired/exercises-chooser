@@ -4,7 +4,6 @@ fullnameOverride: "exercises-chooser"
 replicaCount: 3
 
 service:
-  port: 4535
   annotations:
     prometheus.io/scrape: "true"
     prometheus.io/port: "4535"
@@ -21,7 +20,6 @@ podSecurityContext:
 
 containers:
   - name: exercises-chooser
-    image: cyberdojo/exercises-chooser
     securityContext:
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
@@ -38,10 +36,8 @@ containers:
         memory: 128Mi
     livenessProbe:
       path: /alive?
-      port: 4535
     readinessProbe:
       path: /ready?
-      port: 4535
 
 envFromSecret: {}
 
