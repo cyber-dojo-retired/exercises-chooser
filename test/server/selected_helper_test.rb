@@ -13,8 +13,8 @@ class LargestTest < TestBase
   # - - - - - - - - - - - - - - - - - - -
 
   test '841', %w(
-  select readme.txt content if readme.txt present
-  even if not smallest content
+  select readme.txt content when readme.txt present
+  even if not largest content
   ) do
     expected = 'x' * 34
     visible_files = {
@@ -45,7 +45,7 @@ class LargestTest < TestBase
   # - - - - - - - - - - - - - - - - - - -
 
   test '843', %w(
-  select largest when more than one visible_file
+  select largest content when more than one visible_file
   ) do
     expected = 'x' * 34
     visible_files = {
