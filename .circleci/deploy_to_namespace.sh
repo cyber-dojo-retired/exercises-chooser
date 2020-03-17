@@ -2,7 +2,13 @@
 
 readonly SH_DIR="$(cd "$(dirname "${0}")/../sh" && pwd)"
 source ${SH_DIR}/versioner_env_vars.sh
+echo '---------------------'
+versioner_env_vars
+echo '---------------------'
 export $(versioner_env_vars)
+echo '~~~~~~~~~~~~~~~~~~~~~'
+env
+echo '~~~~~~~~~~~~~~~~~~~~~'
 
 readonly NAMESPACE="${1}" # eg beta
 readonly IMAGE="${CYBER_DOJO_EXERCISES_CHOOSER_IMAGE}"
