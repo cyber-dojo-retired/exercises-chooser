@@ -39,7 +39,7 @@
   #display-names .display-name
   {
     @include wide-list-item();
-    max-width: 375px;
+    max-width: 250px;
   }
 
   button#next
