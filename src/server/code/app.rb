@@ -48,14 +48,14 @@ class App < AppBase
 
   private
 
-  def set_view_data(next_route)
+  def set_view_data(next_page)
     manifests = target.manifests
     @display_names = manifests.keys.sort
     @display_contents = []
     @display_names.each do |name|
       @display_contents << selected(manifests[name]['visible_files'])
     end
-    @next_url = "/languages-chooser/#{next_route}"
+    @next_url = "/languages-chooser/#{next_page}"
   end
 
   include EscapeHtmlHelper
