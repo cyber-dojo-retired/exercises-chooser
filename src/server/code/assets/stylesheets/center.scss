@@ -1,5 +1,5 @@
 
-.align-center
+@mixin center-align
 {
   text-align: center;
   margin: { left : auto; right: auto; }
