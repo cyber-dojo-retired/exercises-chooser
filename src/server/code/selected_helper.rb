@@ -5,8 +5,8 @@ module SelectedHelper
     if visible_files.has_key?('readme.txt')
       visible_files['readme.txt']['content']
     else
-      visible_files.max{ |lhs,rhs|
-        lhs[1]['content'].size <=> rhs[1]['content'].size
+      visible_files.max{ |(_,lhs),(_,rhs)|
+        lhs['content'].size <=> rhs['content'].size
       }[1]['content']
     end
   end
