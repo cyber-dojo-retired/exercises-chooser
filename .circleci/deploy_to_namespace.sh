@@ -3,9 +3,9 @@
 readonly SH_DIR="$(cd "$(dirname "${0}")/../sh" && pwd)"
 source ${SH_DIR}/versioner_env_vars.sh
 echo '---------------------'
-versioner_env_vars
+sudo versioner_env_vars
 echo '---------------------'
-export $(versioner_env_vars)
+export $(sudo versioner_env_vars)
 echo '~~~~~~~~~~~~~~~~~~~~~'
 env
 echo '~~~~~~~~~~~~~~~~~~~~~'
