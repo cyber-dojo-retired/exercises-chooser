@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-require_relative 'chooser.rb'
 require_relative 'app_base'
+require_relative 'chooser.rb'
 require_relative 'escape_html_helper'
 require_relative 'selected_helper'
 
@@ -28,8 +28,7 @@ class App < AppBase
   get '/group_choose', provides:[:html] do
     respond_to do |format|
       format.html do
-        set_view_data
-        @next_url = '/languages-chooser/group_choose'
+        set_view_data('group_choose')
         erb :'group/choose'
       end
     end
@@ -41,8 +40,7 @@ class App < AppBase
   get '/kata_choose', provides:[:html] do
     respond_to do |format|
       format.html do
-        set_view_data
-        @next_url = '/languages-chooser/kata_choose'
+        set_view_data('kata_choose')
         erb :'kata/choose'
       end
     end
@@ -50,13 +48,14 @@ class App < AppBase
 
   private
 
-  def set_view_data
+  def set_view_data(next_route)
     manifests = target.manifests
     @display_names = manifests.keys.sort
     @display_contents = []
     @display_names.each do |name|
       @display_contents << selected(manifests[name]['visible_files'])
     end
+    @next_url = "/languages-chooser/#{next_route}"
   end
 
   include EscapeHtmlHelper
