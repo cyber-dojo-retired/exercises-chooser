@@ -1,48 +1,32 @@
-Run options: --seed 39732
+Run options: --seed 17225
 
 # Running:
 
-.../usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/driver.rb:39: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/driver.rb:39: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
 /usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/bridge.rb:44: warning: The called method `handshake' is defined here
-Unable to find visible css "div.display-name" with text "Calc Stats"
-E.SimpleCov failed with exit 1
+.....
 
-Finished in 8.497606s, 0.5884 runs/s, 0.9414 assertions/s.
+Finished in 8.039896s, 0.6219 runs/s, 1.2438 assertions/s.
 
-  1) Error:
-ChooseTest#test_
-id58 'e5D',
-'|PATH /exercises-chooser/group_choose |shows exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/group_choose?exercise_name=SELECTED':
-Capybara::ElementNotFound: Unable to find visible css "div.display-name" with text "Calc Stats"
-    /usr/local/bundle/gems/capybara-3.31.0/lib/capybara/node/finders.rb:302:in `block in synced_resolve'
-    /usr/local/bundle/gems/capybara-3.31.0/lib/capybara/node/base.rb:83:in `synchronize'
-    /usr/local/bundle/gems/capybara-3.31.0/lib/capybara/node/finders.rb:291:in `synced_resolve'
-    /usr/local/bundle/gems/capybara-3.31.0/lib/capybara/node/finders.rb:52:in `find'
-    /usr/local/bundle/gems/capybara-3.31.0/lib/capybara/session.rb:753:in `find'
-    /usr/local/bundle/gems/capybara-3.31.0/lib/capybara/dsl.rb:53:in `call'
-    /usr/local/bundle/gems/capybara-3.31.0/lib/capybara/dsl.rb:53:in `find'
-    /test/client/choose_test.rb:22:in `block in <class:ChooseTest>'
-    /test/id58_test_base.rb:36:in `instance_eval'
-    /test/id58_test_base.rb:36:in `block in test'
+5 runs, 10 assertions, 0 failures, 0 errors, 0 skips
+Coverage report generated for MiniTest to //tmp/reports. 18092 / 39580 LOC (45.71%) covered.
 
-5 runs, 8 assertions, 0 failures, 1 errors, 0 skips
-Coverage report generated for MiniTest to //tmp/reports. 18175 / 39580 LOC (45.92%) covered.
-
-Slowest 4 tests are...
-0.6121 - xRae5E:choose_test.rb:30:|PATH /exercises-chooser/kata_choose |show exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/kata_choose?exercise_name=SELECTED
-0.0487 - a8615D:ready_test.rb:13:ready when exercises-start-points is ready      
-0.0018 - de3p23:sha_test.rb:12:sha is 40-char git commit sha                     
-0.0008 - d5ae5K:alive_test.rb:12:its alive!                                      
+Slowest 5 tests are...
+6.8418 - xRae5E:choose_test.rb:30:|PATH /exercises-chooser/kata_choose |show exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/kata_choose?exercise_name=SELECTED
+0.6171 - xRae5D:choose_test.rb:13:|PATH /exercises-chooser/group_choose |shows exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/group_choose?exercise_name=SELECTED
+0.1350 - d5ae5K:alive_test.rb:12:its alive!                                      
+0.0044 - de3p23:sha_test.rb:12:sha is 40-char git commit sha                     
+0.0018 - a8615D:ready_test.rb:13:ready when exercises-start-points is ready      
 
 
                  failures |       0   <=     0 | [32m true [0m
-                   errors |       1   <=     0 | [31m false [0m
+                   errors |       0   <=     0 | [32m true [0m
                  warnings |       2   <=     2 | [32m true [0m
                     skips |       0   <=     0 | [32m true [0m
-        duration(test)[s] |     8.5   <=    15 | [32m true [0m
+        duration(test)[s] |    8.04   <=    15 | [32m true [0m
                     tests |       5   >=     1 | [32m true [0m
       coverage(tested)[%] |   100.0   >=   100 | [32m true [0m
-      coverage(tester)[%] |   94.12   >=   100 | [31m false [0m
+      coverage(tester)[%] |   100.0   >=   100 | [32m true [0m
      lines(tester/tested) |    0.98   >=   0.9 | [32m true [0m
-      hits(tested/tester) |    0.48   >=   0.4 | [32m true [0m
+      hits(tested/tester) |    0.47   >=   0.4 | [32m true [0m
 

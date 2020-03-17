@@ -3,7 +3,7 @@
 $(() => {
 
   $('button#next').click(() => {
-    const displayName = cd.selectedDisplayName.text().trim();
+    const displayName = cd.selectedDisplayName;
     const params = `exercise_name=${encodeURIComponent(displayName)}`;
     window.location = `<%= @next_url %>?${params}`;
   });
