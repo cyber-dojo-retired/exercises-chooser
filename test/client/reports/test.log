@@ -1,13 +1,13 @@
-Run options: --seed 47737
+Run options: --seed 1576
 
 # Running:
 
-.../usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/driver.rb:39: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+../usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/driver.rb:39: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
 /usr/local/bundle/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/remote/bridge.rb:44: warning: The called method `handshake' is defined here
 Unable to find visible css "div.display-name" with text "Calc Stats"
-E.SimpleCov failed with exit 1
+E..SimpleCov failed with exit 1
 
-Finished in 8.800641s, 0.5681 runs/s, 0.9090 assertions/s.
+Finished in 8.926670s, 0.5601 runs/s, 0.8962 assertions/s.
 
   1) Error:
 ChooseTest#test_
@@ -29,17 +29,17 @@ Capybara::ElementNotFound: Unable to find visible css "div.display-name" with te
 Coverage report generated for MiniTest to //tmp/reports. 18175 / 39580 LOC (45.92%) covered.
 
 Slowest 4 tests are...
-0.5709 - xRae5D:choose_test.rb:13:|PATH /exercises-chooser/group_choose |shows exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/group_choose?exercise_name=SELECTED
-0.0699 - a8615D:ready_test.rb:13:ready when exercises-start-points is ready      
-0.0021 - de3p23:sha_test.rb:12:sha is 40-char git commit sha                     
-0.0011 - d5ae5K:alive_test.rb:12:its alive!                                      
+0.6221 - xRae5D:choose_test.rb:13:|PATH /exercises-chooser/group_choose |shows exercises display-names |selecting one |clicking [next] button |redirects to /languages-chooser/group_choose?exercise_name=SELECTED
+0.0570 - d5ae5K:alive_test.rb:12:its alive!                                      
+0.0020 - de3p23:sha_test.rb:12:sha is 40-char git commit sha                     
+0.0010 - a8615D:ready_test.rb:13:ready when exercises-start-points is ready      
 
 
                  failures |       0   <=     0 | [32m true [0m
                    errors |       1   <=     0 | [31m false [0m
                  warnings |       2   <=     2 | [32m true [0m
                     skips |       0   <=     0 | [32m true [0m
-        duration(test)[s] |     8.8   <=    15 | [32m true [0m
+        duration(test)[s] |    8.93   <=    15 | [32m true [0m
                     tests |       5   >=     1 | [32m true [0m
       coverage(tested)[%] |   100.0   >=   100 | [32m true [0m
       coverage(tester)[%] |   94.12   >=   100 | [31m false [0m
