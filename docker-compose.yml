@@ -52,7 +52,6 @@ services:
 
   #- - - - - - - - - - - - - - - - - - - - - - - - - - -
   exercises-start-points:
-    container_name: test-exercises-start-points
     environment: [ NO_PROMETHEUS ]
     image: ${CYBER_DOJO_EXERCISES_START_POINTS_IMAGE}:${CYBER_DOJO_EXERCISES_START_POINTS_TAG}
     init: true
@@ -64,6 +63,5 @@ services:
 
   #- - - - - - - - - - - - - - - - - - - - - - - - - - -
   selenium:
-    container_name: test-selenium
     image: selenium/standalone-firefox
     ports: [ "4444:4444" ]
