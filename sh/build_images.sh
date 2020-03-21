@@ -1,14 +1,17 @@
 #!/bin/bash -Eeu
 
 readonly ROOT_DIR="$(cd "$(dirname "${0}")/.." && pwd)"
+source "${ROOT_DIR}/sh/augmented_docker_compose.sh"
+source "${ROOT_DIR}/sh/image_sha.sh"
+source "${ROOT_DIR}/sh/versioner_env_vars.sh"
+export $(versioner_env_vars)
 
 #- - - - - - - - - - - - - - - - - - - - - - - -
 build_images()
 {
-  docker-compose \
-    --file "${ROOT_DIR}/docker-compose.yml" \
-    build \
-    --build-arg COMMIT_SHA="$(git_commit_sha)"
+  export COMMIT_SHA="$(git_commit_sha)"
+  augmented_docker_compose build
+  unset COMMIT_SHA
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
@@ -32,10 +35,5 @@ assert_equal()
 }
 
 #- - - - - - - - - - - - - - - - - - - - - - - -
-readonly SH_DIR="${ROOT_DIR}/sh"
-source ${SH_DIR}/versioner_env_vars.sh
-export $(versioner_env_vars)
-source ${SH_DIR}/image_sha.sh
-
 build_images
 assert_equal SHA "$(git_commit_sha)" "$(image_sha)"
