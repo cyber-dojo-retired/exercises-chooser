@@ -38,7 +38,7 @@ demo()
 #- - - - - - - - - - - - - - - - - - - - - - - - - - -
 curl_json_body_200()
 {
-  local -r log=/tmp/creator.log
+  local -r log=/tmp/exercises-chooser.log
   local -r type="${1}"   # eg GET|POST
   local -r route="${2}"  # eg create_group
   curl  \
@@ -60,7 +60,7 @@ curl_json_body_200()
 #- - - - - - - - - - - - - - - - - - - - - - - - - - -
 curl_200()
 {
-  local -r log=/tmp/creator.log
+  local -r log=/tmp/exercises-chooser.log
   local -r type="${1}"    # eg GET|POST
   local -r route="${2}"   # eg kata_choose
   local -r pattern="${3}" # eg exercise
