@@ -1,11 +1,14 @@
 #!/bin/bash -Eeu
 readonly root_dir="$(cd "$(dirname "${0}")/.." && pwd)"
+source "${root_dir}/sh/container_info.sh"
 readonly my_name=exercises-chooser
-readonly client_user="${1}"; shift
-readonly server_user="${1}"; shift
+readonly client_user="${1}"
+readonly server_user="${2}"
+shift
+shift
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - -
-main()
+test_in_containers()
 {
   if on_ci; then
     docker pull cyberdojo/check-test-results:latest
@@ -41,14 +44,23 @@ run_tests()
   local -r test_dir="${root_dir}/test/${type}"
   local -r reports_dir=${test_dir}/${reports_dir_name}
   local -r test_log=test.log
-  local -r container_name="test-${my_name}-${type}" # eg test-custom-chooser-server
   local -r coverage_code_tab_name=tested
   local -r coverage_test_tab_name=tester
+
+  if [ "${type}" == 'client' ]; then
+    local -r container_name="$(service_container client)"
+  else # server
+    local -r container_name="$(service_container ${my_name})"
+  fi
 
   echo
   echo '=================================='
   echo "Running ${type} tests"
   echo '=================================='
+
+  # Remove old copies of files we are about to create
+  rm ${tmp_dir}/${test_log} 2> /dev/null || true
+  rm ${tmp_dir}/index.html  2> /dev/null || true
 
   set +e
   docker exec \
@@ -91,4 +103,4 @@ run_tests()
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - -
-main "$@"
+test_in_containers "$@"

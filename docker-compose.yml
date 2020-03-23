@@ -9,22 +9,20 @@ services:
   nginx:
     build:
       context: src/nginx_stub
-    container_name: test-nginx
     depends_on:
-      - exercises-chooser-server
+      - client
     image: cyberdojo/nginx_exercises_stub
     init: true
-    ports: [ "80:80" ]
+    ports: [ "${CYBER_DOJO_NGINX_PORT}:${CYBER_DOJO_NGINX_PORT}" ]
     user: root
 
   #- - - - - - - - - - - - - - - - - - - - - - - - - - -
-  exercises-chooser-client:
+  client:
     build:
       args: [ COMMIT_SHA, CYBER_DOJO_EXERCISES_CHOOSER_CLIENT_PORT ]
       context: src/client
-    container_name: test-exercises-chooser-client
     depends_on:
-      - exercises-chooser-server
+      - exercises-chooser
       - selenium
     image: cyberdojo/test-exercises-chooser-client
     init: true
@@ -34,26 +32,3 @@ services:
     tmpfs: /tmp
     user: nobody
     volumes: [ "./test:/test/:ro" ]
-
-  #- - - - - - - - - - - - - - - - - - - - - - - - - - -
-  exercises-chooser-server:
-    build:
-      args: [ COMMIT_SHA, CYBER_DOJO_EXERCISES_CHOOSER_PORT ]
-      context: src/server
-    container_name: test-exercises-chooser-server
-    depends_on:
-      - exercises-start-points
-    environment: [ NO_PROMETHEUS ]
-    image: ${CYBER_DOJO_EXERCISES_CHOOSER_IMAGE}
-    init: true
-    ports: [ "${CYBER_DOJO_EXERCISES_CHOOSER_PORT}:${CYBER_DOJO_EXERCISES_CHOOSER_PORT}" ]
-    read_only: true
-    restart: "no"
-    tmpfs: /tmp
-    user: nobody
-    volumes: [ "./test:/test/:ro" ]
-
-  #- - - - - - - - - - - - - - - - - - - - - - - - - - -
-  selenium:
-    image: selenium/standalone-firefox
-    ports: [ "4444:4444" ]
