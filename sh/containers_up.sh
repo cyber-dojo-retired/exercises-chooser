@@ -11,11 +11,11 @@ export NO_PROMETHEUS=true
 containers_up()
 {
   if [ "${1:-}" == 'server' ]; then
-    container_up     exercises-chooser
+    top_container_up exercises-chooser
     wait_until_ready exercises-chooser
     exit_if_unclean  exercises-chooser
   else
-    container_up     nginx
+    top_container_up nginx
     wait_until_ready nginx
     wait_until_ready client
     exit_if_unclean  client
@@ -23,7 +23,7 @@ containers_up()
 }
 
 # - - - - - - - - - - - - - - - - - - -
-container_up()
+top_container_up()
 {
   local -r service_name="${1}"
   printf '\n'
@@ -68,12 +68,8 @@ curl_ready()
 {
   local -r service_name="${1}"
   local -r port="${2}"
-  if [ "${service_name}" == 'nginx' ]; then
-    local -r path='sha.txt'
-  else
-    local -r path='ready?'
-  fi
-  
+  local -r path=$([ "${service_name}" == 'nginx' ] && echo 'sha.txt' || echo 'ready?')
+
   rm -f $(ready_filename)
   curl \
     --fail \
@@ -90,7 +86,6 @@ curl_ready()
     [ "${status}" == '0' ] && [ "$(ready_response)" == '{"ready?":true}' ]
     return
   fi
-  false
 }
 
 # - - - - - - - - - - - - - - - - - - -
