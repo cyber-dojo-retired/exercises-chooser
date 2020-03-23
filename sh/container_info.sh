@@ -13,6 +13,13 @@ service_container()
   name_port_ls | grep "${service_name}" | cut -f 1 -d " "
 }
 
+# - - - - - - - - - - - - - - - - - - -
+service_port()
+{
+  local -r service_name="${1}"
+  name_port_ls | grep "${service_name}" | cut -f 2 -d '>' | cut -f 1 -d '/'
+}
+
 : <<'COMMENT'
 
 $ name_port_ls

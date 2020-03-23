@@ -10,15 +10,14 @@ export NO_PROMETHEUS=true
 # - - - - - - - - - - - - - - - - - - -
 containers_up()
 {
-  local -r server_port=${CYBER_DOJO_EXERCISES_CHOOSER_PORT}
-  local -r client_port=${CYBER_DOJO_EXERCISES_CHOOSER_CLIENT_PORT}
   if [ "${1:-}" == 'api-demo' ]; then
     container_up_ready_nginx
-    ready_and_clean ${client_port} client
+    wait_until_ready_and_clean client
   elif [ "${1:-}" == 'server' ]; then
-    container_up_ready_and_clean ${server_port} exercises-chooser
+    container_up               exercises-chooser
+    wait_until_ready_and_clean exercises-chooser
   else
-    container_up_ready_and_clean ${client_port} client
+    container_up_ready_and_clean client
     container_up_ready_nginx
   fi
 }
@@ -26,18 +25,16 @@ containers_up()
 # - - - - - - - - - - - - - - - - - - -
 container_up_ready_and_clean()
 {
-  local -r port="${1}"
-  local -r service_name="${2}"
+  local -r service_name="${1}"
   container_up "${service_name}"
-  ready_and_clean "${port}" "${service_name}"
+  wait_until_ready_and_clean "${service_name}"
 }
 
 # - - - - - - - - - - - - - - - - - - -
-ready_and_clean()
+wait_until_ready_and_clean()
 {
-  local -r port="${1}"
-  local -r service_name="${2}"
-  wait_briefly_until_ready "${port}" "${service_name}"
+  local -r service_name="${1}"
+  wait_briefly_until_ready "${service_name}"
   exit_if_unclean "${service_name}"
 }
 
@@ -56,8 +53,8 @@ container_up()
 # - - - - - - - - - - - - - - - - - - - - - -
 wait_briefly_until_ready()
 {
-  local -r port="${1}"
-  local -r service_name="${2}"
+  local -r service_name="${1}"
+  local -r port="$(service_port ${service_name})"
   local -r container_name=$(service_container ${service_name})
   local -r max_tries=40
   printf "Waiting until ${service_name} is ready"
