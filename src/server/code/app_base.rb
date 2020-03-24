@@ -2,6 +2,7 @@
 require_relative 'silently'
 require 'sinatra/base'
 silently { require 'sinatra/contrib' } # N x "warning: method redefined"
+require 'json'
 require 'sprockets'
 
 class AppBase < Sinatra::Base
