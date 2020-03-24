@@ -8,4 +8,4 @@
 - Not yet live.
 
 - - - -
-![web page snapshot](https://github.com/cyber-dojo/exercises-chooser/blob/master/docs/snapshot.png)
+![page snapshot](https://github.com/cyber-dojo/exercises-chooser/blob/master/docs/snapshot.png)
