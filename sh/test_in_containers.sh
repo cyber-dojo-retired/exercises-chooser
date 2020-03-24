@@ -19,8 +19,8 @@ test_in_containers()
     shift
     run_tests "${server_user}" server "${@:-}"
   else
-    run_tests "${server_user}" server "${@:-}"
     run_tests "${client_user}" client "${@:-}"
+    run_tests "${server_user}" server "${@:-}"
   fi
   echo All passed
 }
