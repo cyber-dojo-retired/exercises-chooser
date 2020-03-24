@@ -1,31 +1,31 @@
-Run options: --seed 41621
+Run options: --seed 11068
 
 # Running:
 
 ...............
 
-Finished in 0.183005s, 81.9652 runs/s, 688.5074 assertions/s.
+Finished in 0.191613s, 78.2827 runs/s, 657.5747 assertions/s.
 
 15 runs, 126 assertions, 0 failures, 0 errors, 0 skips
-Coverage report generated for MiniTest to //tmp/reports. 12774 / 24193 LOC (52.8%) covered.
+Coverage report generated for MiniTest to //tmp/reports. 12778 / 24196 LOC (52.81%) covered.
 
 Slowest 5 tests are...
-0.0877 - Q3p2Je:assets_test.rb:12:|GET /assets/app.css is served                 
-0.0255 - a7318w:choose_test.rb:12:|GET/group_choose |offers all display_names |ready to choose a language |when exercises_start_points is online
-0.0209 - d5ae5K:alive_test.rb:12:its alive!                                      
-0.0173 - a7319w:choose_test.rb:30:|GET/kata_choose |offers all display_names |ready to choose a language |when exercises_start_points is online
-0.0044 - q7EF8k:response_error_test.rb:13:|any http-service call |is a 500 error |when response's json.body is not JSON
-0.0037 - q7EF9p:response_error_test.rb:33:|any http-service call |is a 500 error |when response's json.body has embedded exception
+0.1003 - Q3p2Je:assets_test.rb:12:|GET /assets/app.css is served                 
+0.0328 - q7EF9p:response_error_test.rb:33:|any http-service call |is a 500 error |when response's json.body has embedded exception
+0.0149 - a7318w:choose_test.rb:12:|GET/group_choose |offers all display_names |ready to choose a language |when exercises_start_points is online
+0.0130 - a7319w:choose_test.rb:30:|GET/kata_choose |offers all display_names |ready to choose a language |when exercises_start_points is online
+0.0046 - d5ae5K:alive_test.rb:12:its alive!                                      
+0.0032 - q7EF8k:response_error_test.rb:13:|any http-service call |is a 500 error |when response's json.body is not JSON
 
 
                  failures |       0   <=     0 | [32m true [0m
                    errors |       0   <=     0 | [32m true [0m
                  warnings |       0   <=     0 | [32m true [0m
                     skips |       0   <=     0 | [32m true [0m
-        duration(test)[s] |    0.18   <=     5 | [32m true [0m
+        duration(test)[s] |    0.19   <=     2 | [32m true [0m
                     tests |      15   >=     1 | [32m true [0m
       coverage(tested)[%] |   100.0   >=   100 | [32m true [0m
       coverage(tester)[%] |   100.0   >=   100 | [32m true [0m
-     lines(tester/tested) |    0.76   >=   0.7 | [32m true [0m
-      hits(tested/tester) |    1.31   >=   1.2 | [32m true [0m
+     lines(tester/tested) |    0.75   >=   0.7 | [32m true [0m
+      hits(tested/tester) |    1.65   >=   1.6 | [32m true [0m
 
