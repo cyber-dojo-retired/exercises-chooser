@@ -12,6 +12,12 @@
 # relative pathnames (eg in volume-mounts) when the
 # yml is received from stdin (--file -).
 
+if [ "${ROOT_DIR:-}" == '' ]; then
+  readonly ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+fi
+source "${ROOT_DIR}/sh/versioner_env_vars.sh"
+export $(versioner_env_vars)
+
 augmented_docker_compose()
 {
   cd "${ROOT_DIR}" && cat "./docker-compose.yml" \

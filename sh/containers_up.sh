@@ -1,10 +1,11 @@
 #!/bin/bash -Eeu
 
-readonly ROOT_DIR="$(cd "$(dirname "${0}")/.." && pwd)"
+if [ "${ROOT_DIR:-}" == '' ]; then
+  readonly ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+fi
 source "${ROOT_DIR}/sh/augmented_docker_compose.sh"
 source "${ROOT_DIR}/sh/container_info.sh"
 source "${ROOT_DIR}/sh/ip_address.sh"
-readonly IP_ADDRESS=$(ip_address) # slow
 export NO_PROMETHEUS=true
 
 # - - - - - - - - - - - - - - - - - - -
@@ -142,6 +143,3 @@ print_docker_log()
   printf "${log}\n"
   printf '</docker_log>\n'
 }
-
-# - - - - - - - - - - - - - - - - - - -
-containers_up "$@"

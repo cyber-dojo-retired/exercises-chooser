@@ -8,3 +8,7 @@ ip_address()
     echo localhost
   fi
 }
+
+if [ "${IP_ADDRESS:-}" == '' ]; then
+  readonly IP_ADDRESS=$(ip_address)
+fi

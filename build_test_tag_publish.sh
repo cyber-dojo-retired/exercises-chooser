@@ -1,19 +1,20 @@
 #!/bin/bash -Eeu
-readonly SH_DIR="$(cd "$(dirname "${0}")/sh" && pwd)"
+
+readonly SH_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/sh" && pwd)"
+source "${SH_DIR}/build_images.sh"
+source "${SH_DIR}/containers_down.sh"
+source "${SH_DIR}/containers_up.sh"
 source "${SH_DIR}/image_name.sh"
 source "${SH_DIR}/image_sha.sh"
-source "${SH_DIR}/versioner_env_vars.sh"
-export $(versioner_env_vars)
+source "${SH_DIR}/test_in_containers.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
 build_test_tag_publish()
 {
-  ${SH_DIR}/build_images.sh
-  ${SH_DIR}/containers_up.sh "$@"
-  local -r client_user="${CYBER_DOJO_EXERCISES_CHOOSER_SERVER_USER}"
-  local -r server_user="${CYBER_DOJO_EXERCISES_CHOOSER_CLIENT_USER}"
-  ${SH_DIR}/test_in_containers.sh "${client_user}" "${server_user}" "$@"
-  ${SH_DIR}/containers_down.sh
+  build_images
+  containers_up "$@"
+  test_in_containers "$@"
+  containers_down
   tag_the_image
   on_ci_publish_tagged_images
 }

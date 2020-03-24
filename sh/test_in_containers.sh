@@ -1,37 +1,32 @@
 #!/bin/bash -Eeu
-readonly root_dir="$(cd "$(dirname "${0}")/.." && pwd)"
+
+readonly root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 source "${root_dir}/sh/container_info.sh"
 readonly my_name=exercises-chooser
-readonly client_user="${1}"
-readonly server_user="${2}"
-shift
-shift
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - -
 test_in_containers()
 {
+  local -r client_user="${CYBER_DOJO_EXERCISES_CHOOSER_SERVER_USER}"
+  local -r server_user="${CYBER_DOJO_EXERCISES_CHOOSER_CLIENT_USER}"
   if on_ci; then
     docker pull cyberdojo/check-test-results:latest
   fi
   if [ "${1:-}" == 'client' ]; then
     shift
-    run_client_tests "${@:-}"
+    run_tests "${client_user}" client "${@:-}"
   elif [ "${1:-}" == 'server' ]; then
     shift
-    run_server_tests "${@:-}"
+    run_tests "${server_user}" server "${@:-}"
   else
-    run_server_tests "${@:-}"
-    run_client_tests "${@:-}"
+    run_tests "${server_user}" server "${@:-}"
+    run_tests "${client_user}" client "${@:-}"
   fi
   echo All passed
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - -
 on_ci() { [ -n "${CIRCLECI:-}" ]; }
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - -
-run_client_tests() { run_tests "${client_user}" client "${@:-}"; }
-run_server_tests() { run_tests "${server_user}" server "${@:-}"; }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - -
 run_tests()
@@ -101,6 +96,3 @@ run_tests()
   fi
   return ${status}
 }
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - -
-test_in_containers "$@"
