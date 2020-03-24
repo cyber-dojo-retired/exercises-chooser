@@ -39,6 +39,7 @@
     }
     #display-names   { width: 250px; max-width: 250px; }
     #display-content { width: 500px; max-width: 500px; }
+    #display-content { font-size: 0.85em; }    
     #display-names .display-name
     {
       @include wide-list-item();
