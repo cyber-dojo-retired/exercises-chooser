@@ -17,13 +17,18 @@
   margin: { top: 10px; }
   font-size: 1.15em;
 
-  #heading
+  #exercises-chooser-box
+  {
+    @include center-align();
+  }
+  #heading, #sub-heading
   {
     @include non-code-font();
     color: $lighter-color;
-    font-size: 70px;
-    text-align: center;
+    text-align: left;
   }
+  #heading { font-size: 60px; }
+  #sub-heading { font-size: 25px; }
 
   #display-box
   {
@@ -39,7 +44,7 @@
     }
     #display-names   { width: 250px; max-width: 250px; }
     #display-content { width: 500px; max-width: 500px; }
-    #display-content { font-size: 0.85em; }    
+    #display-content { font-size: 0.85em; }
     #display-names .display-name
     {
       @include wide-list-item();
