@@ -11,7 +11,7 @@ class ReadyTest < TestBase
   # - - - - - - - - - - - - - - - - -
 
   test '15D',
-  %w( ready when exercises-start-points is ready ) do
+  %w( its ready ) do
     get '/ready'
     assert last_response.ok?
     assert_equal '{"ready?":true}', last_response.body
