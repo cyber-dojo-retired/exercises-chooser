@@ -28,7 +28,7 @@
     text-align: left;
   }
   #heading { font-size: 60px; }
-  #sub-heading { font-size: 25px; }
+  #sub-heading { font-size: 25px; margin-bottom: 10px; }
 
   #display-box
   {
@@ -43,8 +43,14 @@
       @include edged-panel();
     }
     #display-names   { width: 250px; max-width: 250px; }
-    #display-content { width: 500px; max-width: 500px; }
-    #display-content { font-size: 0.85em; }
+    #display-content
+    {
+      width: 500px;
+      max-width: 500px;
+      font-size: 0.85em;
+      position: relative;
+      top: -2px;
+    }
     #display-names .display-name
     {
       @include wide-list-item();
