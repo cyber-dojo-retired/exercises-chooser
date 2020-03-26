@@ -19,7 +19,8 @@
 
   &[class~='selected']
   {
-    background-color: lighten($darker-color, 20%);
+    color: $darker-color;
+    background: white;
     cursor: default;
   }
   &:hover
