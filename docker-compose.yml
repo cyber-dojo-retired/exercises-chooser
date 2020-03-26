@@ -11,7 +11,7 @@ services:
       context: src/nginx_stub
     depends_on:
       - client
-    image: cyberdojo/nginx_exercises_stub
+    image: cyberdojo/nginx-${CYBER_DOJO_SERVER_NAME}-stub
     init: true
     ports: [ "${CYBER_DOJO_NGINX_PORT}:${CYBER_DOJO_NGINX_PORT}" ]
     user: root
@@ -24,7 +24,7 @@ services:
     depends_on:
       - ${CYBER_DOJO_SERVER_NAME}
       - selenium
-    image: cyberdojo/exercises-chooser-client
+    image: cyberdojo/${CYBER_DOJO_SERVER_NAME}-client
     init: true
     ports: [ "${CYBER_DOJO_CLIENT_PORT}:${CYBER_DOJO_CLIENT_PORT}" ]
     read_only: true
