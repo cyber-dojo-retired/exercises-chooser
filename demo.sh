@@ -25,27 +25,26 @@ api_demo()
 demo()
 {
   echo API
-  curl_json_body_200 GET  alive
-  curl_json_body_200 GET  ready
-  curl_json_body_200 GET  sha
+  curl_json_body_200 alive
+  curl_json_body_200 ready
+  curl_json_body_200 sha
   echo
-  curl_200           GET  assets/app.css 'Content-Type: text/css'
+  curl_200           assets/app.css 'Content-Type: text/css'
   echo
-  curl_200           GET  group_choose create
-  curl_200           GET  kata_choose  create
+  curl_200           group_choose our
+  curl_200           kata_choose  my
 }
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - -
 curl_json_body_200()
 {
-  local -r type="${1}"  # eg GET
-  local -r route="${2}" # eg alive
+  local -r route="${1}" # eg alive
   curl  \
     --data "" \
     --fail \
     --header 'Content-type: application/json' \
     --header 'Accept: application/json' \
-    --request "${type}" \
+    --request GET \
     --silent \
     --verbose \
       "http://${IP_ADDRESS}:$(port)/${route}" \
@@ -53,18 +52,17 @@ curl_json_body_200()
 
   grep --quiet 200 "$(log_filename)" # eg HTTP/1.1 200 OK
   local -r result=$(tail -n 1 "$(log_filename)" | head -n 1)
-  echo "$(tab)${type} ${route} => 200 ${result}"
+  echo "$(tab)GET ${route} => 200 ${result}"
 }
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - -
 curl_200()
 {
-  local -r type="${1}"    # eg GET
-  local -r route="${2}"   # eg group_choose
-  local -r pattern="${3}" # eg exercise
+  local -r route="${1}"   # eg group_choose
+  local -r pattern="${2}" # eg exercise
   curl  \
     --fail \
-    --request "${type}" \
+    --request GET \
     --silent \
     --verbose \
       "http://${IP_ADDRESS}:$(port)/${route}" \
@@ -72,7 +70,7 @@ curl_200()
 
   grep --quiet 200 "$(log_filename)" # eg HTTP/1.1 200 OK
   local -r result=$(grep "${pattern}" "$(log_filename)" | head -n 1)
-  echo "$(tab)${type} ${route} => 200 ${result}"
+  echo "$(tab)GET ${route} => 200 ${result}"
 }
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - -
