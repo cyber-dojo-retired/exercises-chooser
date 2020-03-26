@@ -15,8 +15,6 @@
 if [ "${ROOT_DIR:-}" == '' ]; then
   readonly ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 fi
-source "${ROOT_DIR}/sh/versioner_env_vars.sh"
-export $(versioner_env_vars)
 
 augmented_docker_compose()
 {
