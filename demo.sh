@@ -1,6 +1,6 @@
 #!/bin/bash -Eeu
 
-readonly SH_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}")" && pwd )"
+readonly SH_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/sh" && pwd)"
 source "${SH_DIR}/build_images.sh"
 source "${SH_DIR}/containers_down.sh"
 source "${SH_DIR}/containers_up.sh"
