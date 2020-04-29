@@ -15,14 +15,10 @@ class AppBase < Sinatra::Base
   set :port, ENV['PORT']
 
   # - - - - - - - - - - - - - - - - - - - - - -
-  # stylesheets and javascript
 
   set :environment, Sprockets::Environment.new
-  # append asset paths
   environment.append_path('code/assets/stylesheets')
-  # compress assets
-  # Cause a notable delay in response times so for now off.
-  #environment.css_compressor = :scss
+  environment.css_compressor = :sassc
 
   get '/assets/app.css', provides:[:css] do
     respond_to do |format|
