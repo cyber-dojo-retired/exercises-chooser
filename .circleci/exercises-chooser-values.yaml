@@ -4,8 +4,10 @@ fullnameOverride: "exercises-chooser"
 replicaCount: 3
 
 service:
+  port: 4535
   annotations:
     prometheus.io/scrape: "true"
+    prometheus.io/port: "4535"
 
 volumes:
   - name: exercises-chooser-tmp-dir
@@ -35,8 +37,10 @@ containers:
         memory: 64Mi
     livenessProbe:
       path: /alive?
+      port: 4535
     readinessProbe:
       path: /ready?
+      port: 4535
 
 envFromSecret: {}
 
