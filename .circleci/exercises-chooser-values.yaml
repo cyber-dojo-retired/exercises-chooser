@@ -1,7 +1,7 @@
 
 fullnameOverride: "exercises-chooser"
 
-replicaCount: 3
+replicaCount: 1
 
 service:
   port: 4535
