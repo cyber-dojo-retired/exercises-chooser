@@ -1,28 +1,28 @@
-Run options: --seed 9766
+Run options: --seed 20006
 
 # Running:
 
 ...............
 
-Finished in 0.192905s, 77.7584 runs/s, 653.1702 assertions/s.
+Finished in 0.266463s, 56.2930 runs/s, 472.8612 assertions/s.
 
 15 runs, 126 assertions, 0 failures, 0 errors, 0 skips
-Coverage report generated for MiniTest to //tmp/reports. 12778 / 24197 LOC (52.81%) covered.
+Coverage report generated for MiniTest to //tmp/reports. 12912 / 24198 LOC (53.36%) covered.
 
 Slowest 5 tests are...
-0.0976 - Q3p2Je:assets_test.rb:12:|GET /assets/app.css is served                 
-0.0367 - q7EF9r:response_error_test.rb:53:|any non-http-service call error |is also a 500 error
-0.0133 - a7319w:choose_test.rb:30:|GET/kata_choose |offers all display_names |ready to choose a language |when exercises_start_points is online
-0.0131 - a7318w:choose_test.rb:12:|GET/group_choose |offers all display_names |ready to choose a language |when exercises_start_points is online
-0.0048 - d5ae5K:alive_test.rb:12:its alive!                                      
-0.0030 - q7EF9k:response_error_test.rb:23:|any http-service call |is a 500 error |when response's json.body is not JSON-Hash
+0.1547 - Q3p2Je:assets_test.rb:12:|GET /assets/app.css is served                 
+0.0338 - q7EF9r:response_error_test.rb:53:|any non-http-service call error |is also a 500 error
+0.0167 - a7319w:choose_test.rb:30:|GET/kata_choose |offers all display_names |ready to choose a language |when exercises_start_points is online
+0.0156 - a7318w:choose_test.rb:12:|GET/group_choose |offers all display_names |ready to choose a language |when exercises_start_points is online
+0.0113 - a8615E:ready_test.rb:22:not ready when exercises-start-points is not ready
+0.0056 - q7EF9k:response_error_test.rb:23:|any http-service call |is a 500 error |when response's json.body is not JSON-Hash
 
 
                  failures |       0   <=     0 | [32m true [0m
                    errors |       0   <=     0 | [32m true [0m
                  warnings |       0   <=     0 | [32m true [0m
                     skips |       0   <=     0 | [32m true [0m
-        duration(test)[s] |    0.19   <=     2 | [32m true [0m
+        duration(test)[s] |    0.27   <=     2 | [32m true [0m
                     tests |      15   >=     1 | [32m true [0m
       coverage(tested)[%] |   100.0   >=   100 | [32m true [0m
       coverage(tester)[%] |   100.0   >=   100 | [32m true [0m
