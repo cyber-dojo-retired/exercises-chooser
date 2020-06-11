@@ -31,7 +31,7 @@ readonly NAMESPACE="${1}" # eg beta
 readonly CYBER_DOJO_EXERCISES_CHOOSER_TAG="${CIRCLE_SHA1:0:7}"
 
 helm_upgrade \
-   "${NAMESPACE}" "exercises-chooser" "praqma/cyber-dojo-service --version 0.2.5"
+   "${NAMESPACE}" "exercises-chooser" "praqma/cyber-dojo-service --version 0.2.5" \
    "${CYBER_DOJO_EXERCISES_CHOOSER_IMAGE}" \
    "${CYBER_DOJO_EXERCISES_CHOOSER_TAG}" \
    "${CYBER_DOJO_EXERCISES_CHOOSER_PORT}" \
