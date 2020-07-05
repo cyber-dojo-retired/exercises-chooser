@@ -7,28 +7,26 @@ version: '3.7'
 services:
 
   nginx:
+    image: cyberdojo/nginx-${CYBER_DOJO_SERVER_NAME}-stub
+    user: root
     build:
       context: src/nginx_stub
     depends_on:
       - client
-    image: cyberdojo/nginx-${CYBER_DOJO_SERVER_NAME}-stub
-    init: true
     ports: [ "${CYBER_DOJO_NGINX_PORT}:${CYBER_DOJO_NGINX_PORT}" ]
-    user: root
 
   #- - - - - - - - - - - - - - - - - - - - - - - - - - -
   client:
+    image: cyberdojo/${CYBER_DOJO_SERVER_NAME}-client
+    user: ${CYBER_DOJO_CLIENT_USER}
     build:
       args: [ COMMIT_SHA, CYBER_DOJO_CLIENT_PORT ]
       context: src/client
     depends_on:
       - ${CYBER_DOJO_SERVER_NAME}
       - selenium
-    image: cyberdojo/${CYBER_DOJO_SERVER_NAME}-client
-    init: true
     ports: [ "${CYBER_DOJO_CLIENT_PORT}:${CYBER_DOJO_CLIENT_PORT}" ]
     read_only: true
     restart: "no"
     tmpfs: /tmp
-    user: ${CYBER_DOJO_CLIENT_USER}
     volumes: [ "./test:/test/:ro" ]

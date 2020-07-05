@@ -1,4 +1,4 @@
-FROM cyberdojo/sinatra-base:3ea2375
+FROM cyberdojo/sinatra-base:0fcdde3
 LABEL maintainer=jon@jaggersoft.com
 
 COPY --chown=nobody:nogroup . /app
@@ -10,5 +10,5 @@ ARG CYBER_DOJO_CLIENT_PORT
 ENV PORT=${CYBER_DOJO_CLIENT_PORT}
 EXPOSE ${PORT}
 
-USER nobody
+ENTRYPOINT ["/sbin/tini", "-g", "--"]
 CMD [ "/app/up.sh" ]
